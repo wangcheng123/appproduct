@@ -1,0 +1,57 @@
+<!--pages/main/mine/myClient/myClient.wxml-->
+<view class='myClient'>
+  <view class='line'></view>
+
+  <!-- 奖励订单 -->
+  <view class='rewardOrder' wx:if="{{noClient}}">
+    <view class='rewardOrderFlex'>
+
+      <!-- 每一个订单 -->
+      <block wx:for="{{orders}}" wx:key="k" wx:for-index="i">
+        <view class='orders'>
+          <view class='ordersWhole'>
+            <view class='ordersWhole_One'>
+              <text>{{item.order.users.realname?item.order.users.realname:item.order.users.nickname}}</text>
+              <text class='phone'>{{item.order.users.username}}</text>
+              <text class='time'>{{item.time}}</text>
+            </view>
+
+            <block wx:for="{{item.order.shop_order_goods}}" wx:key="kk" wx:for-index="ii" wx:for-item="good" >
+
+              <view class='ordersWhole_Two'>
+
+                <view class='orderLeftImg'>
+                  <image src='{{imgUrl}}{{good.goods_image}}'></image>
+                </view>
+                <view class='orderRightText'>
+                  <view class='orderRightTextOne'>
+                    <text>{{good.goods_name}}</text>
+                    <text class='number'>×{{good.goods_num}}</text>
+                  </view>
+                  <view class='orderRightNumber'>{{good.goods_item_name}}</view>
+                </view>
+              </view>
+            </block>
+
+            <view class='orderWhole_three'>
+              <text class='defail'>实际支付金额：¥{{item.order.order_price}}</text>
+              <text class='red'>奖励金额：¥{{item.amount}}</text>
+            </view>
+
+          </view>
+        </view>
+      </block>
+      
+    </view>
+  </view>
+
+  <!-- 没有订单 -->
+  <view class='noClient' wx:if="{{!noClient}}">
+    <view class='noClientImg'>
+      <image src='https://img.ameimeika.com/server/64d2b0badfb01b5be484472cc91726f8.png'></image>
+    </view>
+    <view class='noClientText'>
+      <view>暂无奖励订单哦～</view>
+    </view>
+  </view>
+</view>

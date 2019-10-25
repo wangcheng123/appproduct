@@ -1,0 +1,111 @@
+<!-- fastclient.wxml -->
+<view class="container_fastclients">
+  <!-- 快速预约 预约单 tab -->
+  <view class='changetab'>
+    <navigator class="check" hover-class='none'>快速预约</navigator>
+    <navigator url='../bookingForm/bookingForm' class="default" hover-class='none'>预约单</navigator>
+  </view>
+
+  <!-- 快速预约单 板块 -->
+    <!-- 头部导航 -->
+    <view class='top_area'>
+      <view class='nav_bar'>
+        <text class='finish'>预约信息</text>
+        <text class='finish'>客户信息</text>
+        <text>其他信息</text>
+      </view>
+      <view class='dotlist'>
+        <view class='progress'>
+          <view class='line'>
+            <view class='pro step2'></view>
+          </view>
+          <text class='dot finish'></text>
+          <text class='dot finish'></text>
+          <text class='dot'></text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 客户信息填写 -->
+    <view class='client_list'>
+      <!-- 姓名填写 -->
+      <view class='clientlistitem'>
+        <text class='must'>*</text>
+        <label>
+          <text>客</text>
+          <text>户</text>
+          <text>姓</text>
+          <text>名:</text>
+        </label>
+        <input maxlength='10' value="{{userData.realname}}" bindinput='setRealname' type='text' placeholder-class='placecolor' class='client_name' placeholder='请输入客户姓名'></input>    
+      </view>
+      <!-- 手机号填写 -->
+      <view class='clientlistitem'>
+        <text class='must'>*</text>
+        <label>
+          <text>客</text>
+          <text>户</text>
+          <text>手</text>
+          <text>机:</text>
+        </label>
+        <input maxlength='11' bindinput='setUsername' type='number' maxlength='11' placeholder-class='placecolor'  class='client_name' placeholder='请输入客户手机号'></input>    
+      </view>
+      <!-- 验证码填写 -->
+
+      <view class='clientlistitem yzm'>
+        <text class='must'>*</text>
+        <label>
+          <text>验</text>
+          <text>证</text>
+          <text>码:</text>
+        </label>
+        <view class='com'>
+          <input maxlength='6' bindinput='setVerify' type='number' placeholder-class='placecolor' class='client_name' placeholder='请输入验证码'></input>
+          
+          <button bindtap='sendcode' wx:if='{{vsecond <= 0}}'>获取验证码</button>
+          <button wx:else><text>{{vsecond}}</text>s重新发送</button>    
+        </view>      
+      </view>
+      <!-- 年龄填写 -->
+      <view class='clientlistitem'>
+        <text class='must'>*</text>
+        <label>
+          <text>年</text>
+          <text>龄:</text>
+        </label>
+        <input type='number' value="{{age}}" bindinput='setAge' maxlength='3' placeholder-class='placecolor' class='client_name' placeholder='请输入年龄'></input>    
+      </view>
+
+      <!-- 性别填写 -->
+      <view class='clientlistitem'>
+        <text class='must'>*</text>
+        <label>
+          <text>性</text>
+          <text>别:</text>
+        </label>
+        <radio-group class="radio-group">
+          <label class="radio">
+            <radio color='#FF383E' bindtap='setSex' data-sex='2' checked='{{sex==2?true:false}}'/>女
+          </label>
+          <label class="radio">
+            <radio color='#FF383E' bindtap='setSex' data-sex='1' checked='{{sex==1?true:false}}'/>男
+          </label>
+        </radio-group>  
+      </view>
+      <!-- 职业填写 -->
+      <view class='clientlistitem'>
+        <text class='must'>*</text>
+        <label>
+          <text>职</text>
+          <text>业:</text>
+        </label>
+        <input type='text' value="{{workplace}}" bindinput='setWork' placeholder-class='placecolor' class='client_name' placeholder='请输入您的职业'></input>
+        <!--
+        <image style='display:hidden' src='https://img.ameimeika.com/server/723fd8252ad81d912a92044a8c5f2f43.png'></image>  
+        -->
+      </view>
+    </view>
+  
+    <!-- 按钮 -->
+    <button bindtap='userhrefto' class='next_btn_clicent'>下一步</button>
+</view>

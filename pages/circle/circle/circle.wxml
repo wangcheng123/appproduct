@@ -1,0 +1,138 @@
+<!-- circle.wxml -->
+<view class='container_circle'>
+  <!-- 头部区域 -->
+  <view class='someTab' bindtap='toH5prize' wx:if="{{ ab_apply }}"> <view><image class='jinshiImg' src='/images/jingshi-y.png'></image> 您有异常奖励，请点击查看详情，核实后请尽快与我们联系。</view><image class='backIcon' src='https://img.ameimeika.com/active/0e026415e6fd345d810ffd15d13fb29b.png'></image> </view>
+  <view class='circle_area'>
+  
+    <!-- 项目奖励 分销奖励 -->
+    <view class='circletab'>
+      <view bindtap='circletabbtn' data-tab='1' class="{{type==1?'tabselect':'default'}}">项目奖励</view>
+      <view bindtap='circletabbtn' data-tab='2' class="{{type==2?'tabselect':'default'}}">分销奖励</view>
+    </view>
+  </view>
+
+  <block wx:if='{{type==1}}'>
+     <!-- 项目奖励提现 -->
+    <view class='circle_panel'>
+      <view class='panel'>
+        <view class='panel_toptxt'>
+          <text>项目总奖励：</text>
+          <navigator url='../projectFlow/projectFlow' hover-class='none' class='tab_right'>
+            <text>项目流水</text>
+            <image src='https://img.ameimeika.com/active/0e026415e6fd345d810ffd15d13fb29b.png'></image>
+          </navigator>
+        </view>
+        <view class='panel_num'>¥ {{proData.serverData.total_reward?proData.serverData.total_reward:0}}</view>
+        <!-- 可提现 待提现 -->
+        <view class='part'>
+          <view class='part_num'>
+            <view>待提现：<text class='withdrawable'>￥{{proData.serverData.not_into_reward}}</text></view>
+            <view>可提现：<text class='withdrawable'>￥{{proData.serverData.reward}}</text></view>
+          </view>
+          <navigator hover-class='none' url='../withdraw/withdraw/withdraw?draw=1' class='panel_extract'>
+            <text>提现</text>
+          </navigator>
+        </view>
+        
+        <!-- 提示词 -->
+        <view class='noticetxt'>*审核通过5天后待提现金额转为可提现</view>
+
+        <!-- 当天、累计奖励 -->
+        <view class='circle_award'>
+          <view class='award_item'>
+            <view class='award_txt'>当天奖励</view>
+            <view class='award_num'>{{proData.serverData.tReward}}</view>
+          </view>
+
+          <view class='divide'></view>
+          <view class='award_item'>
+            <view class='award_txt'>累计奖励</view>
+            <view class='award_num'>{{proData.serverData.all_reward}}</view>
+          </view>
+
+          <view class='divide'></view>
+          <view class='award_item'>
+            <view class='award_txt'>累计提现奖励</view>
+            <view class='award_num'>{{proData.serverData.yDrawReward}}</view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    
+  </block>
+
+  <block wx:if='{{type==2}}'>
+     <!-- 分销奖励提现 -->
+    <view class='circle_panel'>
+      <view class='panel'>
+        <view class='panel_toptxt'>
+          <text>分销总奖励</text>
+          <navigator url='../distributionFlow/distributionFlow' hover-class='none' class='tab_right'>
+            <text>分销收入明细</text>
+            <image src='https://img.ameimeika.com/active/0e026415e6fd345d810ffd15d13fb29b.png'></image>
+          </navigator>
+        </view>
+
+        <view class='panel_num'>¥ {{fxData.serverData.total_fx_reward?fxData.serverData.total_fx_reward:0}}</view>
+
+        <view class='sales_number'>
+          <view class='sales_num'>
+            <view>待提现：<text class='withdrawable'>￥{{fxData.serverData.not_into_fx_reward}}</text></view>
+            <view>可提现：<text class='withdrawable'>￥{{fxData.serverData.fx_reward}}</text></view>
+          </view>
+          <navigator hover-class='none' url='../withdraw/withdraw/withdraw?draw=2' class='panel_extract'>
+            <text>提现</text>
+          </navigator>
+        </view>
+
+        <view class='noticetxt'>*用户下单15日后待提现金额转为可提现</view>
+
+        <!-- 当天、累计奖励 -->
+        <view class='circle_award'>
+          <view class='award_item'>
+            <view class='award_txt'>当天奖励</view>
+            <view class='award_num'>{{fxData.serverData.fx_tReward}}</view>
+          </view>
+          <view class='divide'></view>
+          <view class='award_item'>
+            <view class='award_txt'>累计奖励</view>
+            <view class='award_num'>{{fxData.serverData.all_fx_reward}}</view>
+          </view>
+          <view class='divide'></view>
+          <view class='award_item'>
+            <view class='award_txt'>累计提现奖励</view>
+            <view class='award_num'>{{fxData.serverData.yDrawFxReward}}</view>
+          </view>
+        </view>
+
+        <!-- 分销订单明细 -->
+        <view class="item" bindtap='toRewardOrder'>
+          <text>分销订单明细</text>
+          <image src='https://img.ameimeika.com/active/0e026415e6fd345d810ffd15d13fb29b.png' class='arrow'></image>
+        </view>
+
+      </view>
+      
+    </view>
+    
+    
+  </block>
+
+ 
+  <!-- 我的团队奖励 -->
+  <view class='tbtn'>
+    <navigator hover-class='none' url='../group/group' class='item_btn'>
+      我的团队
+    </navigator>
+  </view>
+
+  <!-- 7天折线图 -->
+  <view class='sevenCanvas'>
+    <view class='chart_tit'>最近7天奖励走势图<text class='unit'> （单位：元）</text></view>
+    <canvas class="canvas" canvas-id="ringGraph"></canvas>
+  </view>
+
+  
+</view>
+

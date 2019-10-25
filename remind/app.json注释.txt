@@ -1,0 +1,49 @@
+登录：
+"pages/login/index/index",   //登录首页 * 分为微信授权和账号登录
+"pages/login/accountLogin/accountLogin",   //点击账号登录进来的页面
+"pages/login/wxAuthorize/wxAuthorize",     //点击微信授权进来的页面
+"pages/login/bindingPhone/bindingPhone",   //点击微信授权进来的页面再次点击之后出现的弹框  点击使用其他手机号码出现的页面
+
+
+登录成功之后进入：
+"pages/main/index/index",  //首页
+"pages/main/goods/goods",  //分销商品
+"pages/main/mine/mine/main",    //我的
+
+
+首页的页面一系列跳转的页面：
+"pages/main/index/notice/notice/notice",       //点击更多跳转的页面
+"pages/main/index/notice/noticedet/noticedet", //点击更多页面之后在点击查看详情的跳转页面
+
+"pages/main/index/fast/fast/fast",             //点击预约跳转的页面
+"pages/main/index/fast/fastclient/fastclient", //点击下一步进入的页面
+"pages/main/index/fast/fastother/fastother",   //点击下一步进入的页面
+
+"pages/main/index/circle/circle/circle",                     //点击我的奖励跳转的页面
+"pages/main/index/circle/projectFlow/projectFlow",           //点击项目流水跳转的页面
+"pages/main/index/circle/distributionFlow/distributionFlow", //点击分销流水跳转的页面
+"pages/main/index/circle/time/time",                         //进入分销流水和项目流水点击图标跳转的页面               
+"pages/main/index/circle/withdraw/withdraw/withdraw",    //点击体现跳转的页面
+"pages/main/index/circle/withdraw/bank/bank/bank",       //提现页面点击提现至跳转的页面
+"pages/main/index/circle/withdraw/bank/bankadd/bankadd", //我的银行卡点击添加银行卡跳转的页面
+"pages/main/index/circle/group/group",                   //我的奖励页面点击我的团队跳转的页面
+
+"pages/main/index/material/material/material",               //点击素材中心跳转的页面
+"pages/main/index/material/material_del/material_del"        //点击推荐素材下的列表进入素材详情
+"pages/main/index/material/material_list/material_list",     //点击每个项目进入的页面
+"pages/main/index/material/material_search/material_search", //输入素材名称之后回车出现的页面
+"pages/main/index/material/province/province",               //点击省份跳转显示的页面
+
+"pages/main/index/helpback/helpback/helpback", //点击帮助与反馈跳转的页面
+"pages/main/index/helpback/solution/solution", //点击常见问题跳转到查看解决方案
+"pages/main/index/helpback/feedback/feedback", //点击意见反馈跳转到意见反馈页面
+
+
+我的页面一系列跳转的页面：
+"pages/main/mine/myClient/myClient",        //我的客户页面
+"pages/main/mine/rewardOrder/rewardOrder",  //奖励订单页面
+"pages/main/mine/lookCode/lookCode",        //合同详情页面
+
+
+
+

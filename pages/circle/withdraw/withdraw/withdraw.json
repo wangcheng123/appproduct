@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "提现",
+  "navigationBarTextStyle": "black",
+    "usingComponents": {
+      "modal": "../../../../components/modal/modal"
+    }
+}

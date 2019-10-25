@@ -1,0 +1,314 @@
+/* material.wxss */
+.container_material{
+  min-height: 100%;
+}
+/* 头部导航固定 */
+.top_fixed{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 100;
+}
+/* 搜索栏 */
+.search{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+.search .address text{
+  color: #444;
+  font-size: 28rpx;
+  margin-right: 15rpx;
+}
+.search .address image{
+  width: 26rpx;
+  height: 26rpx;
+  vertical-align: middle;
+}
+.search .search_input{
+  position: relative;
+  width: 75%;
+}
+.search .search_input input{
+  height: 64rpx;
+  line-height: 64rpx;
+  background: #f5f5f5;
+  border-radius: 64rpx;
+  padding-left: 70rpx;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+.search .search_input image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 22rpx;
+  left: 20rpx;
+}
+.search .search_input .s_place{
+  font-size: 26rpx;
+  color: #999;
+  line-height: 64rpx;
+}
+/* 导航 */
+.m_nav{
+  margin: 0 30rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  overflow: auto;
+}
+.m_nav .nav_bar{
+  
+  display: flex;
+  flex-wrap:nowrap;
+  justify-content: space-between;
+}
+.m_nav text{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.m_nav .default{
+  font-size: 28rpx;
+  color: #444;
+}
+.m_nav .select{
+  font-size: 28rpx;
+  color: #FE4489;
+  border-bottom: 4rpx solid #FE4489;
+}
+/* 导航列表 */
+.itemlist{
+  padding:204rpx 30rpx 30rpx;
+}
+.itemlist .swiper_page{
+  display: flex;
+  flex-wrap: wrap;
+}
+.itemlist .item{
+  display: inline-block;
+  font-size: 24rpx;
+  color: #444;
+  width: 25%;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.itemlist .item image{
+  width: 96rpx;
+  height: 96rpx;
+}
+
+/* swpier指示点样式 */
+.itemlist .wx-swiper-dots.wx-swiper-dots-horizontal{
+  margin-bottom:-20rpx;
+}
+.itemlist .wx-swiper-dot{
+  width:8rpx;
+  display: inline-flex;
+  height:8rpx;
+  justify-content:space-between;
+}
+.itemlist .wx-swiper-dot-active{
+  width: 20rpx;
+}
+.itemlist .wx-swiper-dot::before{
+  content: '';
+  flex-grow: 1; 
+  background: #cccc;
+  border-radius: 8rpx
+}
+.itemlist .wx-swiper-dot-active::before{
+  background:rgba(254,68,137,1);
+}
+
+/* 推荐素材 */
+.recommend{
+  text-align: center;
+  margin-top: 20rpx;
+}
+.recommend image{
+  width: 28rpx;
+  height: 24rpx;
+  vertical-align: middle;
+}
+.recommend text{
+  font-size: 28rpx;
+  color: #FE4489;
+  margin: 0 4%;
+}
+.material_list{
+  display: flex;
+  margin-top: 30rpx;
+}
+.material_list .col{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1% 0 4%;
+}
+.material_list .col_r{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 4% 0 1%;
+}
+.material_list .material_item{
+  width: 100%;
+  font-size: 0;
+  margin-bottom: 30rpx;
+}
+.material_list .material_item .imgbox{
+  width:100%;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  text-align: center;
+  position: relative;
+}
+.material_list .material_item .imgbox image{
+  width: 100%;
+  min-height: 20rpx;
+}
+.material_list .material_item .minimgbox{
+  width:100%;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  text-align: center;
+  position: relative;
+}
+.material_list .material_item .minimgbox image{
+  width: 100%;
+}
+.material_list .material_item .imgbox .mask image{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-40rpx) translateY(-40rpx);
+}
+.material_list .material_item .minimgbox .mask image{
+  width: 80rpx;
+  height: 80rpx;
+  opacity: 0.6;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-40rpx) translateY(-40rpx);
+}
+.material_list .material_item .title{
+  font-size: 28rpx;
+  color: #444;
+  margin: 3% 0;
+}
+.material_list .material_item .like_msg{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20rpx;
+  color: #999;
+}
+.material_list .material_item .like_msg .favorite{
+  height: 40rpx;
+  line-height: 40rpx;
+  min-width: 20%;
+}
+.material_list .material_item .like_msg .comment{
+  height: 40rpx;
+  line-height: 40rpx;
+  min-width: 30%;
+  margin-left: 20rpx;
+}
+.material_list .material_item .like_msg .favorite image{
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: top;
+  margin-top: 4rpx;
+}
+.material_list .material_item .like_msg .comment image{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: top;
+  margin-top: 4rpx;
+}
+/* 素材占位符 */
+.orderholder{
+  width: 256rpx;
+  height: 228rpx;
+  margin-top: 20%;
+  margin-left: 50%;
+  transform: translateX(-128rpx)
+}
+.orderholder image{
+  width: 100%;
+  height: 100%;
+}
+.orderholder view{
+  font-size: 28rpx;
+  color: #666;
+  text-align: center;
+}
+
+/* 授权弹框 */
+.getloation{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+.getloation .model{
+  width: 80%;
+  margin: 55% 10% 0;
+  background: #fff;
+}
+.getloation .model .tit{
+  text-align: center;
+  font-size: 34rpx;
+  color: #444;
+  padding: 30rpx 20rpx 20rpx;
+}
+.getloation .model .det{
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+  padding:0 30rpx 30rpx;
+}
+.getloation .model .btn{
+  display: flex;
+  justify-content: space-between;
+  border-top: 2rpx solid #eee;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.getloation .model .btn .sure{
+  color: #47B26A;
+}
+.getloation .model .btn button{
+  height: 100rpx;
+  width: 100%;
+  line-height: 100rpx;
+  background: #fff;
+  font-size: 36rpx;
+}
+.getloation .model .btn .line{
+  width: 0;
+  height: 100%;
+  border-left: 1rpx solid #eee;
+}
+
+.mask_box{
+  opacity:0.71;
+  background: rgb(204, 204, 204);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}

@@ -1,0 +1,38 @@
+<!-- feedback.wxml -->
+<view class='container_feed'>
+  <view class='notice'>您的反馈对我们非常重要，如有任何意见、问题请及时反馈我们，以便为您提供更好的服务!</view>
+  <!-- 反馈类型 -->
+  <view class='f_type'>
+    <view class='tit'>反馈类型</view>
+    <view class='type_tab'>
+      <text class="{{item.ischeck?'check':'default'}}" bindtap='choosetype' data-type='{{item.type}}' data-sid='{{index}}' wx:key="{{index}}" wx:for="{{typetab}}">{{item.name}}</text>
+    </view>
+  </view>
+  <!-- 描述 -->
+  <view class='describe'>
+    <view class='label'>描述</view>
+    <textarea bindinput='getval' maxlength='255' placeholder='您有任何疑问都可反馈告诉我们，期待您的建议，以便我们更好的改进～'></textarea>
+    <text class='maxnum'>255字</text>
+  </view>
+  <!-- 上传图片 -->
+  <view class='uploadimg'>
+    <view class='label'>
+      <text>上传图片</text><text>（最多上传3张）</text>
+    </view>
+    <view class='chooseimg'>
+      <view class='imgitem' wx:key="{{index}}" wx:for="{{imgarr}}">
+        <image wx:if="{{item}}" src='{{imgurls}}{{item}}'></image>
+        <image data-index='{{index}}' bindtap='deleteimg' src='https://img.ameimeika.com/active/8ae0d23f75431df3151a545a3d99320a.png' class='close'></image>
+      </view>
+      <!-- 点击添加图片 -->
+      <view wx:if="{{btnisshow}}" bindtap='addimg' class='btn_upload'>
+        <image src='https://img.ameimeika.com/active/11f164bc289afaa1586b4d36579e69cd.png'></image>
+        <text>点击添加图片</text>
+      </view>
+    </view>
+  </view>
+  <!-- 提交按钮 -->
+  <view bindtap='submitdata' class='submit_btn'>
+    提交
+  </view>
+</view>

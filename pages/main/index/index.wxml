@@ -1,0 +1,135 @@
+<!--pages/main/index/index.wxml-->
+<!-- mains.wxml -->
+<view class='container_mains'>
+ <modal id="modal" show="{{showModal}}" height='28%' btn1="暂不申请" btn2="立即申请">
+    <view class="toast">{{redirect_type==3?'请先免费申请成为商户':'您可以到商户PC后台补充门店资料，然后上架商品进行售卖'}}</view>
+  </modal>
+  <!-- 通知 -->
+  <view class='notice'>
+    <text class='noticetxt'>公告</text>
+
+    <swiper class='sildernotice' autoplay="true" circular="true" interval="3500" vertical="true">
+      <block wx:for="{{pData.ban_not_data.notice}}" wx:for-item="item" wx:key="key">
+        <swiper-item>
+          <text data-id="{{item.id}}" bindtap="noticeJump">{{item.title}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <navigator url='../../notice/notice/notice' class='notice_more' hover-class='none'>
+      更多
+    </navigator>
+  </view>
+
+  <!-- banner -->
+  <swiper class='swiperbox' autoplay="true" interval="3000" circular="true" indicator-dots="true">
+
+    <block wx:for="{{pData.ban_not_data.banner}}" wx:for-item="item" wx:key="key">
+      <swiper-item>
+        <image src="{{imgUrl}}{{item.img}}" data-type="{{item.type}}" data-url="{{item.url}}" bindtap="bannerJump"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 今日营业额，今日订单数 -->
+  <view class="turnover">
+    <view class="turnover_item">
+      <view class="item_title">
+        <image src="https://img.ameimeika.com/h5_images/businessAssistant/icon_home_money.png"></image>今日营业额</view>
+      <view class="item_num">￥{{moneyNum.money}}</view>
+    </view>
+    <view class="turnover_line"></view>
+    <view class="turnover_item">
+      <view class="item_title">
+        <image src="https://img.ameimeika.com/h5_images/businessAssistant/icon_home_order.png"></image>今日订单数</view>
+      <view class="item_num">{{moneyNum.count}}</view>
+    </view>
+  </view>
+
+  <!-- 预约 -->
+  <view class='botitem'>
+    <navigator url='/pages/fast/fast/fast' class='itemlist' hover-class='none'>
+      <image src="https://img.ameimeika.com/h5_images/businessAssistant/button_home_ask.png"></image>
+    </navigator>
+    <view class='itemlist' bindtap="bindCancel">
+      <image src="https://img.ameimeika.com/h5_images/businessAssistant/button_home_manual.png"></image>
+    </view>
+    <view class='itemlist' bindtap='getScancode'>
+      <image src="https://img.ameimeika.com/h5_images/businessAssistant/button_home_writeoff.png"></image>
+    </view>
+  </view>
+
+  <!-- 奖励  业绩  团队 订单  客服 -->
+  <view class='botitem order_box'>
+    <navigator url='/pages/main/pirce/price' class='itemlist' hover-class='none'>
+      <view class="icon"></view>
+      <view>我的奖励</view>
+    </navigator>
+    <navigator url='/pages/main/results/results' class='itemlist' hover-class='none'>
+      <view class="icon"></view>
+      <view>我的业绩</view>
+    </navigator>
+    <navigator url='/pages/circle/group/group' class='itemlist' hover-class='none'>
+      <view class="icon"></view>
+      <view>我的团队</view>
+    </navigator>
+    <view class='itemlist' bindtap='goOrder'>
+      <view class="icon"></view>
+      <view>订单管理</view>
+    </view>
+    <navigator class='itemlist' hover-class='none'>
+      <button class='kefu' open-type="contact" session-from='姓名：{{sname}}  手机号：{{sphone}}'> </button>
+      <view>我的客服</view>
+    </navigator>
+  </view>
+
+  <!-- 底部logo -->
+  <view class="bottom_logo">
+    <image src="https://img.ameimeika.com/h5_images/member/title_home_last.png" mode="widthFix"></image>
+  </view>
+  <!-- 核销结果 -->
+  <view class="cancel_result" wx:if="{{isCancelResult}}">
+    <image class="result_icon" :src="resultIcon"></image>
+    <view class="title">{{isResult==true?"核销成功":"核销失败"}}</view>
+    <view class="money" wx:if="{{isResult}}">￥100</view>
+    <text>{{isResult==true?"皮肤清洁 去黑头":"请认准美美咖二维码"}}</text>
+    <view class="cancel_btn">
+      <navigator url='/pages/circle/circle/circle' class='result_btn' hover-class='none' wx:if="{{isResult}}">
+        返回工作台
+      </navigator>
+      <block wx:else>
+      <view class='result_btn' bindtap='getScancode'>
+        重新扫描
+      </view>
+      </block>
+    </view>
+  </view>
+</view>
+<navigator hover-class="none" target="miniProgram" open-type="exit" bindtap="exitBtn"></navigator>
+
+<!--弹窗-->
+<view class='shadow' wx:if="{{isShadow}}">
+  <!--新人专享-->
+  <view class='active' wx:if="{{pop_new_server}}">
+    <image bindtap='toCardH5' mode='widthFix' src='{{is_new_rule?card300:card1000}}'></image>
+    <view bindtap='clsoe_pop_server'>
+      <text>关闭</text>
+    </view>
+  </view>
+
+  <!--推荐新人奖励-->
+  <view class='reward' wx:if="{{pop_referee_reward}}">
+    <!--底图-->
+    <image mode='widthFix' src='{{imgUrl}}server/2019/05/25/42cf9d2daa10cec1a428e2d17ad39d1a.png'></image>
+
+    <view class='money'>
+      <text>￥</text>{{deal.money?deal.money:0}}
+    </view>
+
+    <view class='ok' bindtap='close_pop_reward'>
+      <text>确定</text>
+    </view>
+
+  </view>
+
+</view>

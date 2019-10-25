@@ -1,0 +1,18 @@
+<!-- province.wxml -->
+<view class='container_province'>
+  <!-- 定位地址 -->
+  <view class='location'>
+    <image src='https://img.ameimeika.com/active/d5baee1442d8c4862f2ee48fdc47922e.png'></image>
+    <text>当前定位：</text>
+    <text class='pro'>{{location.name}}</text>
+  </view>
+  <!-- 所有省份 -->
+  <view class='p_title'>所有省份</view>
+  <view class='pro_list'>
+    <block wx:for="{{prolist}}" wx:key="k" wx:for-index="i">
+      <view bindtap='setProvince' data-province_id='{{item.province_id}}' data-name='{{item.name}}' class='{{item.province_id == location.province_id?"change":""}}'>{{item.name}}</view>
+    </block>
+    
+  </view>
+
+</view>

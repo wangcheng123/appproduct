@@ -1,0 +1,15 @@
+<!--pages/login/index/index.wxml-->
+<view class='container_login'>
+  <view class='logo_img'>
+    <image src='https://img.ameimeika.com/h5_images/businessAssistant/logo.png'></image>
+  </view>
+  <view class='logo_txt'>美美咖商户助手</view> 
+
+  <view class='login_form'>
+    <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='wxlogin'>微信授权</button>
+    <button bindtap='aclogin' class='aclogin'>帐号登录</button>
+    <button bindtap='bindphone' class='aclogin'>手机号登录/注册</button>
+  </view>
+  
+</view>
+  

@@ -1,0 +1,44 @@
+/* pages/main/cancel/manuallyCancel.wxss */
+
+.container_code {
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.input_code {
+  width: 100%;
+  height: 100rpx;
+  background: rgba(243, 243, 243, 1);
+  border-radius: 10rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size:32rpx;
+font-family:PingFangSC-Medium,PingFangSC;
+font-weight:500;
+color:rgba(153,153,153,1);
+}
+.container_code .result_btn{
+  font-size:32rpx;
+font-family:PingFangSC-Regular,PingFangSC;
+font-weight:400;
+color:rgba(255,56,62,1);
+margin-top: 50rpx;
+text-align: center;
+}
+.check_btn{
+  width:460rpx;
+height:100rpx;
+background:rgba(255,56,62,1);
+border-radius:50rpx;
+font-size:32rpx;
+font-family:PingFangSC;
+font-weight:500;
+color:rgba(255,255,255,1);
+line-height: 100rpx;
+text-align: center;
+position: absolute;
+bottom: 70rpx;
+left: 50%;
+transform: translateX(-50%);
+}

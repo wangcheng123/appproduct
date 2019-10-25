@@ -1,0 +1,130 @@
+<!--pages/main/mine/main.wxml-->
+<view class='mineBg'>
+  <!-- 头像 -->
+  <view class="top">
+    <view class='head'>
+      <view class='headImg'>
+        <image src="{{mineData.headimgurl?imgUrl + mineData.headimgurl :''}}"></image>
+      </view>
+      <view class="head_right">
+        <view class='head_name'>
+          <view class="name">
+            <view class="h2">{{mineData.realname}}</view>
+            <view class="h5">{{mineData.type}}</view>
+          </view>
+          <view class="roles">
+            <view>{{mineData.role_name}}</view>
+            <view>({{mineData.username}})</view>
+          </view>
+        </view>
+        <view class="exit_btn" bindtap="exitBtn">退出</view>
+      </view>
+    </view>
+    <view class="bussiness_btn">
+      <icon></icon>{{message}}</view>
+  </view>
+  <!-- 我的客户，推广海报
+  <view class='mine_two'>
+    <navigator class='mine_twoLeft' url='../myClient/myClient' hover-class='none'>
+      <image src='https://img.ameimeika.com/server/8e788fe432f6dc62717ff58b160925a4.png'></image>
+      <view> <image class='jinshiIcon' wx:if="{{ ab_water }}" src="/images/jingshi.png"></image> 我的客户</view>
+    </navigator>
+    <view class='line'></view>
+    <view class='mine_twoRight' bindtap='toPost'>
+      <image src='https://img.ameimeika.com/server/00fec1537330dbdcca65b9ebf425b3ac.png'></image>
+      <view>推广海报</view>
+    </view>
+  </view> -->
+
+  <!-- 总奖励金额 -->
+  <!-- <view class='price'>
+    <view class='price_package'>
+      <view class='price_packageOne'>
+        <text>分销总奖励</text>
+        <text class='rewardOrder' bindtap='torewardOrder'>奖励订单</text>
+        <image src='https://img.ameimeika.com/server/27fbb94e49a585b9694166639ea8da03.png' class='arrow'></image>
+      </view>
+
+      <view class='totalPrice'>{{mineData.all_fx_reward}}</view>
+
+      <view class='number'>
+        <navigator class='mine_twoLeft numberLeft' url='../myClient/myClient?tmonth=1' hover-class='none'>
+          <view class='newMonth'>本月新增</view>
+          <view class='numbers'>{{mineData.month_rec}}</view>
+        </navigator>
+        <view class='line'></view>
+        <navigator class='mine_twoRight numberRight' url='../myClient/myClient' hover-class='none'>
+          <view class='newMonth'>累计推荐</view>
+          <view class='numbers'>{{mineData.all_rec}}</view>
+        </navigator>
+      </view>
+      
+    </view>
+  </view> -->
+
+  <!-- 意见反馈 -->
+  <view class="menu">
+    <view class="item" bindtap='toMoney'>
+      <image src="https://img.ameimeika.com/h5_images/businessAssistant/icon_my_.png" class="icon"></image>
+      <text>我的资金</text>
+      <image src='https://img.ameimeika.com/server/27fbb94e49a585b9694166639ea8da03.png' class='arrow'></image>
+    </view>
+    <view class="item" bindtap='toCustomer'>
+      <image src="https://img.ameimeika.com/h5_images/businessAssistant/icon_my_kf.png" class="icon"></image>
+      <text>我的客户</text>
+      <image src='https://img.ameimeika.com/server/27fbb94e49a585b9694166639ea8da03.png' class='arrow'></image>
+    </view>
+    <view class="item" bindtap='toPost'>
+      <image src="https://img.ameimeika.com/h5_images/businessAssistant/icon_my_customer.png" class="icon"></image>
+      <text>推广海报</text>
+      <image src='https://img.ameimeika.com/server/27fbb94e49a585b9694166639ea8da03.png' class='arrow'></image>
+    </view>
+    <view class="item" bindtap='toCardH5'>
+      <image src="https://img.ameimeika.com/h5_images/businessAssistant/icon_my_ticket.png" class="icon"></image>
+      <text>卡券中心</text>
+      <image src='https://img.ameimeika.com/server/27fbb94e49a585b9694166639ea8da03.png' class='arrow'></image>
+    </view>
+    <view class="item" bindtap='toHelpBack'>
+      <image src="https://img.ameimeika.com/h5_images/businessAssistant/icon_my_opinion.png" class="icon"></image>
+      <text>意见反馈</text>
+      <image src='https://img.ameimeika.com/server/27fbb94e49a585b9694166639ea8da03.png' class='arrow'></image>
+    </view>
+    <view class="bottom"></view>
+  </view>
+
+
+  <!-- 查看合同 -->
+  <!-- <view class='code'>
+    <view class='codeFlex'>
+      <view class='codeImg' bindtap='codePopup'>
+        <image src='https://img.ameimeika.com/active/f9e2a157ee18d3fff64c24e540d1d5a9.png'></image>
+      </view>
+
+      <view class='codeText'>
+        <view class='serverMMK'>
+          <view>推荐美美咖服务商</view>
+          <view>邀请好友加入</view>
+        </view>
+      </view>
+      
+    </view>
+  </view> -->
+
+
+  <!-- 二维码弹窗 -->
+  <!-- <view wx:if="{{issewm}}" class='codemask'>
+    <view class='ewm'>
+      <image src='https://img.ameimeika.com/active/f9e2a157ee18d3fff64c24e540d1d5a9.png'></image>
+    </view>
+    <view bindtap='hideewm' class='close'>
+      <image src='https://img.ameimeika.com/active/e6f93f773fca1765d0a38ee8f89773f0.png'></image>
+    </view>
+  </view> -->
+
+  <!-- 封面图 -->
+  <!-- <view class="bottom_text">
+    
+    <view class="text">心有多大，舞台就有多大~</view>
+    <image class="icon" src="https://img.ameimeika.com/server/9a77abca31cea597e2b5c81af9f422cb.png"></image>  
+  </view> -->
+</view>

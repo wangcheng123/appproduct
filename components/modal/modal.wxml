@@ -1,0 +1,25 @@
+<view class='mask' wx:if='{{show}}'>
+  <view class='modal-content' style='height:{{height}}'>
+
+    <scroll-view scroll-y class='main-content'>
+      <view class="mtext">
+        <slot></slot>
+      </view>
+
+    </scroll-view>
+    <view class='modal-btn-wrapper'>
+      <!-- 取消功能 -->
+      <view wx:if="{{btn1}}" class='cancel-btn'>
+        <navigator class='cancel-btn' style='color:#999;' wx:if="{{btntype==1}}" hover-class="none" target="miniProgram" open-type="exit">{{btn1}}</navigator>
+        <view wx:else style='color:#999;' bindtap='cancel'>{{btn1}}</view>
+      </view>
+
+
+      <!-- 确认功能 -->
+      <view wx:if="{{btn2}}" class='confirm-btn'>
+        <navigator class='cancel-btn' style='color:#FF383E;' wx:if="{{suretype==1}}" hover-class="none" target="miniProgram" open-type="exit">{{btn2}}</navigator>
+        <view wx:else style='color:#FF383E' bindtap='confirm'>{{btn2}}</view>
+      </view>
+    </view>
+  </view>
+</view>

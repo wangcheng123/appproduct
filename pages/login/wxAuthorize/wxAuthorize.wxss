@@ -1,0 +1,195 @@
+/* pages/login/wxAuthorize/wxAuthorize.wxss */
+.login_form{
+  position: absolute;
+  bottom: 148rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wxlogin{
+  width: 560rpx;
+  text-align: center;
+  color:rgba(255,255,255,1);
+  font-size: 32rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background:rgba(255,56,62,1);
+  border-radius: 45rpx;
+  margin-bottom: 40rpx;
+}
+.login_btn{
+  width: 560rpx;
+height:90rpx;
+background:rgba(2,187,0,.11);
+border-radius:45rpx;
+font-size: 32rpx;
+line-height: 90rpx;
+color:rgba(2,187,0,1);
+text-align: center;
+}
+.login_btn.active{
+  background:rgba(2,187,0,1);
+  color:rgba(255,255,255,1);
+}
+.container_login{
+  padding: 140rpx;
+}
+.logo_title{
+font-size:32rpx;
+font-weight:500;
+color:rgba(51,51,51,1);
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+.logo_title icon{
+    width: 24rpx;
+  height: 34rpx;
+  background: url(https://img.ameimeika.com/h5_images/businessAssistant/icon_phone.png) no-repeat;
+  background-size: 100% 100%;
+  margin-right: 10rpx;
+}
+.logo_txt{
+  font-size:52rpx;
+font-weight:600;
+color:rgba(51,51,51,1);
+padding-top: 44rpx;
+}
+.logo_img image{
+  width: 100%;
+  height: 100%;
+}
+
+/* 弹窗样式 */
+.popup{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+}
+
+.modal-dialog {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  background: white;
+  width: 100%;
+  height: 614rpx;
+}
+.dialog{
+  margin: 40rpx 30rpx 0;
+}
+/* one */
+.dialog_one{
+  position: relative;
+}
+.dialog_one .dialog_oneImg{
+  width:48rpx;
+  height:48rpx;
+}
+.dialog_oneText{
+  font-size:34rpx;
+  font-weight:500;
+  color:black;
+  position: absolute;
+  left: 78rpx;
+  bottom: 11rpx;
+}
+.dialog_oneText2{
+  margin-left: 20rpx; 
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  position: absolute;
+  left: 300rpx;
+  bottom: 15rpx;
+}
+.dialog_one .dialog_oneImg2{
+  width:28rpx;
+  height:28rpx;
+  position: absolute;
+  right: 0;
+  top: 13rpx;
+}
+
+/* two */
+.youPhone{
+  font-size:42rpx;
+  font-weight: 600;
+  color:rgba(51,51,51,1);
+  margin: 30rpx 0;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+/* three */
+.dialog_three{
+  margin: 30rpx 0;
+  position: relative;
+}
+.dialog_phone{
+  font-size: 30rpx;
+  color: black;
+}
+.dialog_wxphone{
+  font-size: 30rpx;
+  color: #999999;
+  margin-left: 30rpx;
+}
+.dialog_three image{
+  width:32rpx;
+  height:24rpx;
+  position: absolute;
+  right: 12rpx;
+  top: 15rpx;
+}
+/* four */
+.otherPhone{
+  color: #676D8E;
+  font-size: 26rpx;
+  border-top: 2rpx solid #EEEEEE;
+  padding-top: 30rpx;
+}
+
+/* five */
+.btn{
+  margin: 80rpx 0;
+  padding: 0 0 80rpx 0;
+}
+.refuse{
+  width:330rpx;
+  height:72rpx;
+  line-height: 72rpx;
+  background:rgba(242,242,242,1);
+  border-radius:36rpx;
+  float: left;
+  font-size: 32rpx;
+  color: #333333;
+}
+.allow{
+  width:330rpx;
+  height:72rpx;
+  line-height: 72rpx;
+  background:rgba(28,171,26,1);
+  border-radius:36rpx;
+  float: right;
+  font-size: 32rpx;
+  color:white;
+}
+
+/* dialog2 */
+.dialog2{
+  margin: 40rpx 40rpx 0;
+}
+.dialog_text{
+  margin:30rpx 0 0 28rpx;
+  font-size: 28rpx;
+  color:rgba(51,51,51,1);
+  line-height: 43rpx;
+}
+.dialog_section{
+  margin-top: 30rpx;
+  padding-bottom: 285rpx;
+}

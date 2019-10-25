@@ -1,0 +1,61 @@
+/* helpback.wxss */
+.container_help{
+  background: #F5F5F5;
+  min-height: 100%;
+}
+/* 问题 */
+.common{
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.faqlist{
+  width: 100%;
+  padding-left:30rpx;
+  background: #fff; 
+  /*margin-bottom: 120rpx;*/
+  padding-bottom: 120rpx;
+}
+.faqlist .listitem{
+  width: 95%;
+  padding: 24rpx 0;
+  font-size: 28rpx;
+  border-bottom: 2rpx solid rgba(238,238,238,1);
+}
+.faqlist .listitem:last-child{
+  border-bottom: none;
+}
+/* 在线客服 意见反馈 */
+.faq_btn{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  height: 98rpx;
+  line-height: 98rpx;
+  background:RGBA(255, 56, 62, 1);
+  display: flex;
+  justify-content: space-between;
+  border-top: 2rpx solid #ccc;
+}
+.faq_btn .service{
+  width: 49%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  background:RGBA(255, 56, 62, 1);
+  font-size: 28rpx;
+  line-height: 98rpx;
+}
+.faq_btn .tofeedback{
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+}
+.faq_btn .divide{
+  width: 0;
+  height: 60rpx;
+  border-left: 2rpx solid #eee;
+  margin-top: 19rpx;
+}

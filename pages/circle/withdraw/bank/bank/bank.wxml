@@ -1,0 +1,47 @@
+<!-- bank.wxml -->
+<view class='container_bank'>
+  <!-- 银行卡列表 -->
+  <scroll-view scroll-y class='bank_list' bindscrolltolower="banklower" >
+
+    <view style='margin-top:10rpx;'>
+      <view wx:key="{{index}}" wx:for="{{banks}}" class='list_item'>
+
+        <view bindtap='cardselect' data-id="{{item.id}}" data-cardtxt="{{item.bank_name}} ({{item.card_num}})" class='bank' style='background:url({{imgurl}}{{item.bank_img}}) no-repeat;background-size: 100% 100%;'>
+          <view class='bankname'>{{item.bank_name}}</view>
+          <view class='banktype'>{{item.card_type}}</view>
+          <view class='banknum'>**** **** **** {{item.card_num}}</view> 
+          <view wx:if="{{item.id != edit_id}}" data-id='{{item.id}}'  class='edit' catchtap='chedit'>编辑</view>   
+        </view>
+
+        <!-- 解除绑定 -->
+        <button wx:if="{{item.id == edit_id}}" class='remove' bindtap='deletebank'>解除绑定</button>
+      </view>
+
+    </view>
+
+  </scroll-view>
+  <!-- 弹框 -->
+  <view wx:if="{{showModal}}" class='modal_mask'>
+    <view class='modal'>
+      <view class='content'>解除绑定后将不可提现至此银行卡</view>
+      <view class='btn'>
+        <button bindtap='canceld'>取消</button>
+        <view class='divi'></view>
+        <button bindtap='confirm' class='sure'>确定</button>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 列表为空占位符 -->
+  <view class='holerimg' wx:if="{{isshow}}">
+    <image src='https://img.ameimeika.com/active/6489f27797bf22a0f2d4b947d7adb4fb.png'></image>
+    <view>还没有添加银行卡哦~</view>
+  </view>
+
+  <!-- 添加银行卡 -->
+  <navigator hover-class='none' url='../bankadd/bankadd' class='add_bank_btn'>
+    <button><text class='symbol'>+</text> 添加银行卡</button>
+  </navigator>
+  
+</view>

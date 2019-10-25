@@ -1,0 +1,33 @@
+<!--pages/main/results/results.wxml-->
+<view class="container_main">
+  <view class='aTopTitle'>
+    <block wx:for="{{['PLUS会员业绩','服务业绩','项目业绩','商品业绩']}}" wx:key="id">
+      <view data-index='{{index}}' class="titleItem {{currentTabsIndex == index ? 'active' : ''}}" bindtap='onTabs'>{{item}}</view>
+    </block>
+  </view>
+  <!-- 业绩主页 -->
+  <view class="results_main" wx:if="{{currentTabsIndex == index}}">
+    <view class="month_results">
+      <view class="title">本月业绩</view>
+      <view class="money_results">￥{{resultsType.achieve}}</view>
+      <view class="item">
+        <text>当前全国排名</text>
+        <text>{{resultsType.nation_rant}}</text>
+      </view>
+      <view class="item">
+        <text>当前全省排名</text>
+        <text>{{resultsType.pro_rant}}</text>
+      </view>
+      <view class="results_infor" bindtap="resultsInfor">查看业绩明细</view>
+    </view>
+    <view class="image_icon"></view>
+    <view class="results_content">
+      <view class="title">
+        <icon></icon>本月全国业绩第一人来自{{resultsType.first_achieve_province}}</view>
+      <view class="num">￥{{resultsType.first_achieve?resultsType.first_achieve:''}}</view>
+      <view class="title">
+        <icon></icon>累计全国直推人数第一人来自{{resultsType.team_province}}</view>
+      <view class="num">{{resultsType.team_number}}人</view>
+    </view>
+  </view>
+</view>

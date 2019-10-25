@@ -1,0 +1,78 @@
+<!-- material_det.wxml -->
+<view class='container_mdet'>
+  <!-- 素材主体内容 -->
+  <view class='section'>
+
+    <block wx:if="{{mtype==1}}">
+      
+      <!-- 描述 -->
+      <view class="desc">
+        <view class="head">分享文案:</view>
+        <!-- <view class="body"></view> -->
+        <scroll-view class="body" scroll-y="true">{{contents}}</scroll-view>
+      </view>
+      
+      <!--图片-->
+      <image mode="widthFix" src='{{material_url}}' bindtap="down"></image>
+      
+      <view class="tool">
+        <view>
+          <button bindtap='copyText' data-text="{{contents}}">复制文案</button>
+        </view>
+        <view>
+          <button bindtap="down">保存图片</button>
+        </view>
+      </view>
+      
+      <!-- 授权弹框 （保存相册） -->
+      <view wx:if="{{isalert}}" class='modal'>
+        <view class='box'>
+          <view class='text'>“美美咖服务商应用程序”要保存图片或视频到您的相册</view>
+            <view class='selectbtn'>
+            <button bindtap='hidealert' data-type='1' class='cancel'>取消</button>
+            <view class='line'></view>
+            <button bindtap='hidealert' open-type="openSetting" bindopensetting='handleSetting' data-type='2' class='cancel' style='color:#47B26A'>确定</button>
+          </view>
+        </view>
+        
+      </view>
+
+    </block>
+
+
+    <block wx:else>
+
+      <!-- 描述 -->
+      <view class="desc">
+        <view class="head">分享文案:</view>
+        <view class="body">{{contents}}</view>
+      </view>
+      
+      <!--视频-->
+      <video objectFit='contain' src="{{material_url}}" controls='{{true}}' show-fullscreen-btn="{{false}}"></video>
+
+      <view class="tool">
+        <view>
+          <button bindtap='copyText' data-text="{{contents}}">复制文案</button>
+        </view>
+        <view>
+          <button bindtap="down">下载视频</button>
+        </view>
+      </view>
+    </block>
+
+
+  </view>
+</view>  
+
+<!-- 授权弹框 （保存相册） -->
+<view wx:if="{{isalert}}" class='modal'>
+  <view class='box'>
+    <view class='text'>“美美咖服务商应用程序”要保存图片或视频到您的相册</view>
+    <view class='selectbtn'>
+      <button bindtap='hidealert' data-type='1' class='cancel'>取消</button>
+      <view class='line'></view>
+      <button bindtap='hidealert' open-type="openSetting" bindopensetting='handleSetting' data-type='2' class='cancel' style='color:#47B26A'>确定</button>
+    </view>
+  </view>
+</view>

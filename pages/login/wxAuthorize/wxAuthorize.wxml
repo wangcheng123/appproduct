@@ -1,0 +1,13 @@
+<!--pages/login/wxAuthorize/wxAuthorize.wxml-->
+<view class='container_login'>
+  <view class='logo_title' wx:if="{{userPhone.status==2&&userPhone.phone}}">
+    <icon></icon>当前绑定手机号为
+  </view>
+  <view class='logo_txt'>{{userPhone.status==2&&userPhone.phone?userPhone.phone:'请先绑定手机号'}}</view> 
+
+  <view class='login_form'>
+    <button class='wxlogin' bindtap="checkBtn" wx:if="{{userPhone.status==2&&userPhone.phone}}">确认登录</button>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="login_btn {{userPhone.status==2&&userPhone.phone?'':'active'}}">{{userPhone.status==2&&userPhone.phone?'使用其他手机号':'绑定手机号'}}</button>
+  </view>
+
+</view>

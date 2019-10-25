@@ -1,0 +1,107 @@
+<!-- fastother.wxml -->
+<view class="container_others">
+  <!-- 快速预约 预约单 tab -->
+  <view class='changetab'>
+    <navigator class="check" hover-class='none'>快速预约</navigator>
+    <navigator url='../bookingForm/bookingForm' class="default" hover-class='none'>预约单</navigator>
+  </view>
+
+  <!-- 快速预约单 板块 -->
+    <!-- 头部导航 -->
+    <view class='top_area'>
+      <view class='nav_bar'>
+        <text class='finish'>预约信息</text>
+        <text class='finish'>客户信息</text>
+        <text class='finish'>其他信息</text>
+      </view>
+      <view class='dotlist'>
+        <view class='progress'>
+          <view class='line'>
+            <view class='pro step3'></view>
+          </view>
+          <text class='dot finish'></text>
+          <text class='dot finish'></text>
+          <text class='dot finish'></text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 其他信息填写 -->
+    <view class='other_list'>
+      <!-- item -->
+      <view class='list_item'>
+        <view class='other_tit'>性格特点：</view>
+        <input maxlength='50' value="{{user_nature}}" bindinput='set_user_nature' type='text'  placeholder-class='placecolor' placeholder='请输入性格特点（50字以内）'></input>
+
+      </view>
+      <!-- item -->
+      <view class='list_item focus'>
+        <text class='other_tit'>用户关注点：</text>
+        <checkbox-group class="checkbox_group" bindchange="set_user_concern" >
+          <label class="checkbox">
+            <checkbox checked='{{user_concern_arr[1]}}' value="1" />效果
+          </label>
+          <label class="checkbox">
+            <checkbox checked='{{user_concern_arr[2]}}' value='2' />价格
+          </label>
+          <label class="checkbox">
+            <checkbox checked='{{user_concern_arr[3]}}' value='3' />环境
+          </label>
+          <label class="checkbox">
+            <checkbox checked='{{user_concern_arr[4]}}' value='4' />服务
+          </label>
+        </checkbox-group>
+      </view>
+      <view class='list_item'>
+        <view class='other_tit'>曾咨询医院：</view>
+        <input type='text' value="{{know_hospitals}}" bindinput='set_know_hospitals' maxlength='50' placeholder-class='placecolor' placeholder='请输入曾咨询医院（50字以内）'></input>
+      </view>
+      <view class='list_item'>
+        <view class='other_tit'>曾做过的医美项目：</view>
+        <input type='text' value="{{done_project}}" bindinput='set_done_project' maxlength='50' placeholder-class='placecolor' placeholder='请输入曾做过的医美项目（50字以内）'></input>
+      </view>
+      <view class='list_item'>
+        <view class='other_tit'>经济自主权：</view>
+        <input type='text' value="{{auto_economic}}" bindinput='set_auto_economic' maxlength='50' placeholder-class='placecolor' placeholder='请输入经济自主权（50字以内）'></input>
+      </view>
+      <view class='list_item'>
+        <view class='other_tit'>经济实力：</view>
+        <input type='text' value="{{power_economic}}" bindinput='set_power_economic' maxlength='50' placeholder-class='placecolor' placeholder='请输入经济实力（50字以内）'></input>
+      </view>
+
+      <view class='list_item'>
+        <view class='other_tit'>铺垫项目：</view>
+        <input type='text' maxlength='50' bindinput='set_follow_project' placeholder-class='placecolor' placeholder='请输入铺垫项目（50字以内）'></input>
+      </view>
+      <view class='list_item degree'>
+        <view class='other_tit'>铺垫程度：</view>
+        <input type='text' type='number' bindinput='set_follow_level' value='{{follow_level}}' maxlength='3'></input>
+        <text>%</text>
+      </view>
+      <view class='list_item expect'>
+        <view class='other_tit'>预计消费：</view>
+
+        <picker class='item_select' bindchange="expectfreeChange"  range="{{expect_frees}}">
+          <view class='picker' class='expect' wx:if="{{expect_free}}">
+            {{expect_free_str}}
+          </view>
+          <view class='picker' class='holdercolor' wx:else>
+            请选择预约消费
+          </view>
+           <image src='https://img.ameimeika.com/server/723fd8252ad81d912a92044a8c5f2f43.png'></image>
+        </picker>
+      </view>
+
+      <view class="list_item" style="margin-bottom:18rpx">
+        <view class='other_tit'>备注：</view>
+      </view>
+      <view>
+        <textarea bindinput="set_submit_remark" class="remark" placeholder="备注" placeholder-style="font-size:36rpx;" />
+      </view>
+    </view>
+
+    <!-- 按钮 -->
+    <button class='fast_sub_btn' bindtap='fastsubmit'>立即预约</button>
+    <view class='btnbot'></view>
+
+</view>

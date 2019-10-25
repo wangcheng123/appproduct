@@ -1,0 +1,55 @@
+/* province.wxss */
+.container_province{
+  min-height: 100%;
+  background: #f5f5f5;
+}
+/* 定位地址 */
+.location{
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  border-top: 1rpx solid #eee;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+}
+.location image{
+  width: 28rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.location .pro{
+  color: #FE4489;
+}
+/* 所有省份 */
+.p_title{
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 24rpx;
+  color: #666;
+  padding: 0 30rpx;
+}
+.pro_list{
+  height: 100%;
+  padding: 20rpx 0 0rpx;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pro_list view{
+  width: 30%;
+  height: 76rpx;
+  line-height: 76rpx;
+  overflow: auto;
+  border: 2rpx solid #ccc;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: #444;
+  margin-left: 2%;
+  margin-bottom: 3%;
+}
+.pro_list .change{
+  color: #FE4489;
+  border: 2rpx solid #FE4489;
+}

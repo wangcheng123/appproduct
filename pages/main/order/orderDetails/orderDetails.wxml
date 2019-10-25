@@ -1,0 +1,65 @@
+<!--pages/main/results/results.wxml-->
+<view class="container_main">
+  <view class="top">
+    <view class="title" style="color:{{project.order_status==2?'#FF383E':''}}">{{project.order_status==2?"待使用":"已使用"}}</view>
+    <view class="stitle">有效期：{{project.expired_time}}</view>
+    <view class="stitle">核销码：{{project.code}}</view>
+  </view>
+  <!-- 订单列表 -->
+  <view class="information">
+    <view class="item">
+      <view class="title">
+        <view class="left">
+          <icon></icon>{{project.goods_info.hospital_name}}</view>
+
+      </view>
+      <view class="fonts">
+        <image src="{{project.goods_info.project_image}}"></image>
+        <view class="right">
+          <view class="fonts_title">{{project.goods_info.project_name}}</view>
+          <view class="num">
+
+            <view class="money">
+              <text>{{project.goods_info.project_price}}</text>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class="item">
+      <view class="orderInfo_title">订单信息</view>
+      <view class="list">
+        订单号
+        <text>{{project.order_info.order_sn}}</text>
+      </view>
+      <view class="list">
+        购买手机号
+        <text>{{project.order_info.username}}</text>
+      </view>
+      <view class="list">
+        付款时间
+        <text>{{project.order_info.pay_time}}</text>
+      </view>
+    </view>
+    <view class="item">
+      <view class="orderInfo_title">付款信息</view>
+      <view class="list">
+        购买数量
+        <text>{{project.pay_info.count}}</text>
+      </view>
+      <view class="list">
+        订单总价
+        <text>{{project.pay_info.order_price}}</text>
+      </view>
+      <view class="list">
+        优惠券抵扣
+        <text>{{project.pay_info.ticket_pay}}</text>
+      </view>
+      <view class="list">
+        实际付款
+        <text class="red">{{project.pay_info.order_amount}}</text>
+      </view>
+    </view>
+  </view>
+</view>

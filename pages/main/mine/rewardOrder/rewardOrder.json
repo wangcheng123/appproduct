@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "奖励订单",
+  "navigationBarTextStyle": "black"
+}

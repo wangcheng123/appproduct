@@ -1,0 +1,106 @@
+/* award.wxss */
+.container_award{
+  height: 100%;
+  background: rgba(248,248,248,1);
+}
+/* 头部信息 */
+.topdata{
+  background: rgba(248,248,248,1);
+  padding: 20rpx 30rpx;
+  position: relative;
+}
+.topdata .aw_month{
+  font-size:24rpx;
+  color:rgba(68,68,68,1);
+}
+.topdata .account{
+  font-size:20rpx;
+  color:rgba(153,153,153,1);
+  margin-top: 10rpx;
+}
+.topdata .account text{
+  margin-right: 40rpx;
+}
+.topdata .select_time{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 34rpx;
+  right: 30rpx;
+}
+.topdata .select_time image{
+  width: 100%;
+  height: 100%;
+}
+/* 滑动列表 */
+.award_scro{
+  width: 750rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 92.5%;
+  background: white;
+  padding: 10rpx 0 28rpx 30rpx;
+}
+.detailed{
+  display: flex;
+  padding-bottom: 20rpx;
+  border-bottom: 3rpx solid #F5F5F5;
+  margin-top: 28rpx;
+}
+.detailedImg image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.detailedText{
+  margin-left:15rpx;
+  flex: 1;
+  position: relative;
+}
+.projectPrice{
+  font-size: 28rpx;
+  color: #333333;
+}
+.time{
+  font-size: 24rpx;
+  color: #666666;
+  margin-top: 6rpx;
+}
+.info{
+  font-size: 20rpx;
+  color: #999999;
+  margin-top: 15rpx
+}
+.phone,.price{
+  margin-top: 3rpx;
+}
+.detailedPrice{
+  color: #FF383E;
+  font-size: 34rpx;
+  position: absolute;
+  top: 18rpx;
+  right: 60rpx;
+}
+.detailedPrice2{
+  color: #333333;
+  font-size: 34rpx;
+  position: absolute;
+  top: 18rpx;
+  right: 60rpx;
+}
+/* 占位符 */
+.holderimg{
+  width: 60%;
+  text-align: center;
+  position: fixed;
+  top: 30%;
+  left: 20%;
+}
+.holderimg image{
+  width: 210rpx;
+  height: 210rpx;
+}
+.holderimg view{
+  font-size:28rpx;
+  color:rgba(102,102,102,1);
+  margin-top: 15rpx;
+}

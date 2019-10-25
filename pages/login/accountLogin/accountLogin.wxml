@@ -1,0 +1,41 @@
+<!--pages/login/accountLogin/accountLogin.wxml-->
+<view class='container_login'>
+  <view class='txt'>登录美美咖商户助手</view> 
+
+  <view class='login_form'>
+    <!-- 手机号输入 -->
+    <view class='form_item'>
+      <label class='icon_phone'>
+        <image src='https://img.ameimeika.com/server/f1cd4fc9baf4e3747477f35c04b136ab.png'></image>
+      </label>
+      <input  class='login_phone' type='number' value='{{username}}' placeholder-class="phcolor" placeholder='请输入账号' maxlength='11' bindinput="bindUsernameInput"></input>
+
+      <!-- 清空图标 -->
+      <view class='close_phone' wx:if="{{username}}" bindtap='clear_username'>
+        <image src='https://img.ameimeika.com/server/82e8fe6e91918806b75255d116c3810c.png'></image>
+      </view>
+
+    </view>
+    <!-- 密码输入 -->
+    <view class='form_item'>
+      <label class='icon_psw'>
+        <image src='https://img.ameimeika.com/server/bef75793ef0af8443e898467d85f413e.png'></image>
+      </label>
+      <input class='login_psw' type='text' maxlength='18' placeholder-class="phcolor" placeholder='请输入密码' bindinput="bindPasswdInput" password='{{ispsw}}'></input>
+      <!-- 密码显示及隐藏图标 -->
+      <view class='psw_eye' bindtap='toggleShowPassword'>
+        <image src='https://img.ameimeika.com/server/defb777c6731d03901fd7144ac30569b.png' wx:if='{{isShowPassword}}'/>
+        <image src='https://img.ameimeika.com/server/7142748b0023d633d2fa666976dcec52.png' wx:if='{{!isShowPassword}}'/>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 登录按钮 -->
+  <view>
+    <button class='login_sub' bindtap='login'>登录</button>
+  </view>
+  
+</view>
+
+

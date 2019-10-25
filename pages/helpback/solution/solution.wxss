@@ -1,0 +1,99 @@
+/* 富文本文件 */
+@import "../../../wxParse/wxParse.wxss";
+
+/* solution.wxss */
+.container_solution{
+  min-height: 100%;
+  background: #F5F5F5;
+}
+/* 解决方案 */
+.solution_box{
+  padding-left: 30rpx;
+  background: #fff;
+  padding-right: 20rpx;
+}
+.solution_box .tit{
+  padding: 24rpx 20rpx 24rpx 0;
+  font-size: 28rpx;
+  color:#444;
+  border-bottom: 2rpx solid rgba(238,238,238,1);
+  font-weight: 600;
+  margin-bottom: 25rpx;
+}
+.solution_box .answer{
+  padding: 24rpx 30rpx 40rpx 0;
+  font-size: 28rpx;
+  color: #6F6F6F;
+  word-break:break-all;
+}
+.solution_box .issolution{
+  padding-right: 30rpx;
+  font-size:24rpx;
+  color:#EEEEEE;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.solution_box .issolution .text{
+  color: #999;
+}
+.solution_box .isuse{
+  padding: 60rpx 85rpx 60rpx 70rpx;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0;
+}
+.solution_box .isuse .defule image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.solution_box .isuse .defule text{
+  font-size: 26rpx;
+  color: #999;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+.solution_box .isuse .check image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+.solution_box .isuse .check text{
+  font-size: 26rpx;
+  color: #FE4489;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+.prompt{
+  font-size:24rpx;
+  color:rgba(102,102,102,1);
+  margin: 30rpx 30rpx 120rpx 30rpx;
+}
+/* 意见反馈按钮 */
+.feedback{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 98rpx;
+  line-height: 98rpx;
+  box-shadow:0px -1px 0px 0px rgba(204,204,204,1);
+  background: #fff;
+  font-size:28rpx;
+  color:rgba(102,102,102,1);
+  text-align: center;
+}
+
+/* 富文本样式 */
+.wxParse-p{
+  font-size: 24rpx;
+  color: #666;
+}
+.wxParse-p image{
+  max-width: 100%;
+}
+.wxParse-inline{
+  font-size: 24rpx;
+  color: #666;
+}

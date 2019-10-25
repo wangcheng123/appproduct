@@ -1,0 +1,53 @@
+<!-- award.wxml -->
+<view class='container_award'>
+  <!-- 头部信息 -->
+  <view class='topdata'> 
+    <view class='aw_month' wx:if="{{!start_time}}">本月</view>
+    <view class='aw_month' wx:else>{{start_time}} 至 {{end_time}}</view>
+
+    <view class='account'>
+      <text>进账 {{income}}</text>
+      <text>出账 {{outcome}}</text>
+    </view>
+    <navigator url='../time/time' class='select_time'>
+      <image src='https://img.ameimeika.com/active/40b0dd14f5066eca9076d1301c2e0e85.png'></image>
+    </navigator>
+  </view>
+
+  <scroll-view class='award_scro' scroll-y wx:if="{{list.length > 0}}" lower-threshold="70" bindscrolltolower="bindscrolltolower">
+
+    <view class='detailed' wx:for="{{list}}" wx:key>
+      <view class='detailedImg' wx:if="{{item.icon}}">
+        <image  src='{{imgUrl}}{{item.icon}}'></image>
+      </view>
+      <view class='detailedText'>
+        <view class='projectPrice'>{{item.msg}}</view>
+        <view class='time'>
+          {{item.created_at}}
+
+          <text class='{{item.amount>0?"detailedPrice":"detailedPrice2"}}'>{{item.amount}}</text>
+        </view>
+
+        <view class='info' wx:if="{{item.username}}">
+          <view class='name'><text>会员姓名：</text><text>{{item.realname?item.realname:item.nickname}}</text></view>
+          <view class='phone'><text>会员手机：</text><text>{{item.username}}</text></view>
+          <view class='price'><text>消费金额：</text><text>¥{{item.money}}</text></view>
+        </view>
+        <view class='info' wx:if="{{item.remark && !item.username}}">
+          <view class='name'>备注：{{item.remark}}</view>
+        </view>
+
+      </view>
+
+    </view>
+
+    
+  </scroll-view>
+
+  <!-- 占位符 -->
+  <view class='holderimg' wx:else>
+    <image src='https://img.ameimeika.com/server/13c10ae3529426f7196cc2af877d6dc7.png'></image>
+    <view>暂时还没有流水记录哦~</view>
+  </view>
+  
+</view>

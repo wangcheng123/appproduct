@@ -1,0 +1,97 @@
+/* bankadd.wxss */
+.container_bankadd{
+  min-height: 100%;
+  background: white;
+}
+/* 提示词 */
+.add_txt{
+  padding: 24rpx 30rpx;
+  background: #F5F5F5;
+}
+.add_txt text{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  color:rgba(102,102,102,1);
+}
+/* 表单 */
+.add_form{
+  padding: 0 30rpx;
+  background: #fff;
+}
+.add_form .add{
+  display: flex;
+  height:100rpx;
+  line-height: 100rpx;
+  border-bottom:1rpx solid rgba(238,238,238,1);
+}
+.add_form .add label{
+  width: 84rpx;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  color:#333333;
+  text-align: justify;
+  text-align-last:justify;
+}
+.add_form .add input{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  width: 80%;
+  margin-left: 5%;
+}
+
+/* 验证码 */
+.add_yzm{
+  margin-top: 30rpx;
+}
+.add_yzm .add_tit{
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  color:rgba(68,68,68,1);
+}
+.add_yzm .add_input{
+  height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
+  border-bottom:1rpx solid rgba(238,238,238,1);
+}
+.add_yzm .add_input input{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size:28rpx;
+  width: 65%;
+}
+.add_yzm .add_input button{
+  height:60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #FF383E;
+  outline-style: none;
+  border-radius:32rpx;
+  border:2rpx solid rgba(255,56,62,1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 8rpx;
+  z-index: 10;
+  background: white;
+  
+}
+.add_next{
+  width: 560rpx;
+  height:88rpx;
+  line-height: 88rpx;
+  background:#FF383E;
+  border-radius:46rpx;
+  font-size:40rpx;
+  color:rgba(255,255,255,1);
+  position: absolute;
+  bottom: 84rpx;
+  left: 50%;
+  transform: translateX(-280rpx)
+}
+.hrline{
+  height:20rpx;
+  background:rgba(248,248,248,1);
+  margin-top:30rpx;
+}

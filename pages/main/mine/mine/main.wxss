@@ -1,0 +1,379 @@
+/* pages/main/mine/main.wxss */
+
+.mineBg {
+  width: 100%;
+  height: 100%;
+  background: #ff383e;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  padding: 40rpx 40rpx 30rpx;
+  height: 352rpx;
+  box-sizing: border-box;
+}
+
+.head {
+  margin-bottom: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.headImg {
+  width: 102rpx;
+  height: 102rpx;
+  background: white;
+  border-radius: 50%;
+  padding: 5rpx;
+  box-sizing: border-box;
+}
+
+.headImg image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.head_right {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 30rpx;
+}
+
+.head_name {
+  color: white;
+}
+
+.head_name .name {
+  display: flex;
+  flex-direction: row;
+  font-family: PingFangSC;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  align-items: center;
+}
+
+.head_name .name .h2 {
+  flex: 1;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 36rpx;
+}
+
+.head_name .name .h5 {
+  width: 88rpx;
+  height: 40rpx;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 40rpx;
+  margin-left: 14rpx;
+  font-size: 24rpx;
+  margin-top: 0;
+}
+
+.head_name .roles {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  font-weight: 400;
+}
+
+.head_name .roles view:first-child {
+  margin-bottom: 6rpx;
+}
+
+.exit_btn {
+  width: 96rpx;
+  height: 56rpx;
+  border-radius: 36rpx;
+  border: 2rpx solid rgba(255, 255, 255, 1);
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 52rpx;
+  box-sizing: border-box;
+}
+
+.bussiness_btn {
+  width:670rpx;
+height:100rpx;
+background:rgba(255,255,255,1);
+border-radius:50rpx;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+font-size:36rpx;
+font-weight:500;
+color:rgba(255,56,62,1);
+}
+.bussiness_btn icon{
+  width: 40rpx;
+  height: 40rpx;
+  background: url(https://img.ameimeika.com/h5_images/businessAssistant/icon_shop.png) no-repeat;
+  background-size: 100% 100%;
+  margin-right: 20rpx;
+}
+
+/* 我的客户，推广海报 */
+
+.mine_two {
+  margin: 40rpx 30rpx 20rpx;
+  height: 136rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4rpx 8rpx 0rpx rgba(215, 215, 215, 0.5);
+  border-radius: 8rpx;
+  display: flex;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.mine_twoLeft, .mine_twoRight {
+  margin-top: 16rpx;
+  flex: 1;
+}
+
+.mine_twoLeft image, .mine_twoRight image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.line {
+  width: 2rpx;
+  height: 48rpx;
+  background: rgba(238, 238, 238, 1);
+  margin-top: 44rpx;
+}
+
+/* three */
+
+.price {
+  margin: 0 30rpx 20rpx;
+  height: 366rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4rpx 8rpx 0rpx rgba(215, 215, 215, 0.5);
+}
+
+.price_package {
+  padding: 30rpx 20rpx;
+  position: relative;
+}
+
+.price_packageOne text:first-child {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.rewardOrder {
+  font-size: 28rpx;
+  color: #333;
+  position: absolute;
+  right: 70rpx;
+  top: 40rpx;
+}
+
+.arrow {
+  position: absolute;
+  right: 15rpx;
+  top: 35rpx;
+}
+
+.price_packageOne image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.totalPrice {
+  text-align: center;
+  font-size: 48rpx;
+  color: #ff383e;
+  margin: 40rpx 0;
+}
+
+.number {
+  display: flex;
+  text-align: center;
+  border-top: 2rpx solid #f5f5f5;
+}
+
+.numberLeft, .numberRight {
+  padding-top: 25rpx;
+}
+
+.newMonth {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.numbers {
+  font-size: 33rpx;
+  color: #ff383e;
+  margin-top: 14rpx;
+}
+
+/* 查看合同 */
+
+.code {
+  margin: 0 30rpx;
+  background: white;
+}
+
+.codeFlex {
+  display: flex;
+  padding: 50rpx 0 50rpx 70rpx;
+}
+
+.codeText {
+  margin: 60rpx 0 20rpx 60rpx;
+}
+
+.codeText .serverMMK {
+  font-size: 29rpx;
+  color: #333;
+}
+
+.lookCode {
+  font-size: 25rpx;
+  color: #ff383e;
+  margin-top: 50rpx;
+}
+
+.lookCode text {
+  border-bottom: 2rpx solid #ff383e;
+}
+
+.codeImg image {
+  width: 208rpx;
+  height: 208rpx;
+}
+
+/* 二维码 */
+
+.codemask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0rpx;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.codemask .ewm {
+  width: 500rpx;
+  height: 500rpx;
+  background: #fff;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-260rpx);
+  padding: 20rpx;
+}
+
+.codemask .ewm image {
+  width: 100%;
+  height: 100%;
+}
+
+.codemask .close {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: 23%;
+  left: 50%;
+  transform: translateX(-15rpx);
+}
+
+.codemask .close image {
+  width: 100%;
+  height: 100%;
+}
+
+/*  菜单按钮 */
+
+.menu {
+  flex: 1;
+  padding: 30rpx 40rpx;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4rpx 8rpx 0rpx rgba(215, 215, 215, 0.5);
+  background: #fff;
+  border-radius: 40rpx 40rpx 0px 0px;
+}
+
+.menu .item {
+  padding: 30rpx 0rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  line-height: 32rpx;
+  position: relative;
+  border-bottom: 1px solid rgba(245, 245, 245, 1);
+}
+.menu .item .icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+}
+.menu .item>.arrow {
+  width: 48rpx;
+  height: 48rpx;
+  top: 20rpx;
+}
+
+.cover {
+  margin-top: 25%;
+  width: 100%;
+  height: 300rpx;
+  background: url("https://img.ameimeika.com/server/cc95c7cfaf5e6fe1e81750c82fd252f4.png") no-repeat;
+  background-size: auto 100%;
+  background-position: center top;
+}
+
+.bottom_text {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  font-size: 30rpx;
+  color: rgba(120, 130, 140, 1);
+}
+
+.bottom_text .text {
+  text-align: center;
+  display: inline-block;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+
+.bottom_text .icon {
+  position: absolute;
+  padding-top: 8rpx;
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.jinshiIcon {
+  width: 28rpx !important;
+  height: 24rpx !important;
+  position: relative;
+  top: 1rpx;
+}
+.bottom{
+  margin: 40rpx auto;
+  width: 424rpx;
+  height: 30rpx;
+  background: url("https://img.ameimeika.com/h5_images/businessAssistant/bg_my.png") no-repeat;
+  background-size: auto 100%;
+}

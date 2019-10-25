@@ -1,0 +1,75 @@
+.container_login{
+  border-top: 3rpx solid rgba(238,238,238,1);
+}
+.login_form{  
+  margin: 30rpx;
+}
+.phone,.code{
+  display: flex;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.phone label{
+  flex: 1;
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 50rpx;
+}
+.login_phone{
+  font-size: 30rpx;
+  color: #333333;
+  flex: 3.2;
+}
+.code{
+  margin-top: 30rpx;
+}
+.code label{
+  flex: 1;
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 50rpx;
+  margin-top: 8rpx;
+}
+.login_psw{
+  flex: 1.8;
+  font-size: 30rpx;
+  color: #333333;
+  margin-top: 8rpx;
+}
+.yzm_btn{
+  flex: 1;
+  height: 64rpx;
+  line-height: 64rpx;
+  border-radius:32rpx;
+  border:2rpx solid rgba(255,56,62,1);
+  color: #FF383E;
+  font-size: 28rpx;
+  background: white
+}
+.phcolor{
+  color: #666666;
+  
+}
+
+
+button.login_sub{
+  margin: 160rpx 60rpx 0;
+  height:90rpx;
+  background:rgba(255,56,62,1);
+  border-radius:45px;
+  color: #FFFFFF;
+  font-size: 34rpx;
+}
+button.login_sub[disabled]{
+  margin: 160rpx 60rpx 0;
+  height:90rpx;
+  border-radius:45rpx;
+  background:rgba(255,56,62,1);
+  color: white;
+  opacity:0.495;
+  font-size: 34rpx;
+  font-weight:500;
+}
+.login_sub::after{
+  border: none;
+}

@@ -1,0 +1,28 @@
+/* noticedet.wxss */
+.container_noticedet{
+  min-height: 100%;
+  background: #fff;
+}
+/* 公告详情 */
+.n_panel{
+  min-height: 100rpx; 
+  padding: 30rpx;
+  font-size: 32rpx;
+  color:rgba(51,51,51,1);
+  background: #fff;
+  font-weight: 600;
+}
+.n_panel .ndet_time{
+  font-size:24rpx;
+  color:rgba(153,153,153,1);
+  margin: 20rpx 0;
+  font-weight: 400;
+}
+.n_panel .ndet_img{
+  width: 100%;
+}
+.n_panel .ndet_det{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  font-weight: 400;
+}

@@ -1,0 +1,51 @@
+<!--pages/main/index/index.wxml-->
+<!-- mains.wxml -->
+<view class='container_mains'>
+ 
+  <!-- 核销结果 -->
+  <view class="cancel_result">
+    <image class="result_icon" src="{{resultIcon}}"></image>
+    <view class="title">{{isResult?"核销成功":"核销失败"}}</view>
+    <view class="money" wx:if="{{isResult}}">￥100</view>
+    <text>{{isResult?"皮肤清洁 去黑头":result}}</text>
+    <view class="cancel_btn">
+      <navigator url='/pages/circle/circle/circle' class='result_btn' hover-class='none' wx:if="{{isResult}}">
+        返回工作台
+      </navigator>
+      <block wx:else>
+      <view class='result_btn' bindtap='getScancode'>
+        重新扫描
+      </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+
+<!--弹窗-->
+<view class='shadow' wx:if="{{isShadow}}">
+  <!--新人专享-->
+  <view class='active' wx:if="{{pop_new_server}}">
+    <image bindtap='toCardH5' mode='widthFix' src='{{is_new_rule?card300:card1000}}'></image>
+    <view bindtap='clsoe_pop_server'>
+      <text>关闭</text>
+    </view>
+  </view>
+
+  <!--推荐新人奖励-->
+  <view class='reward' wx:if="{{pop_referee_reward}}">
+    <!--底图-->
+    <image mode='widthFix' src='{{imgUrl}}server/2019/05/25/42cf9d2daa10cec1a428e2d17ad39d1a.png'></image>
+
+    <view class='money'>
+      <text>￥</text>{{deal.money?deal.money:0}}
+    </view>
+
+    <view class='ok' bindtap='close_pop_reward'>
+      <text>确定</text>
+    </view>
+
+  </view>
+
+
+</view>

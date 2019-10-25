@@ -1,0 +1,227 @@
+.container_fasts{
+  height: 100%;
+  background:#f5f5f5;
+}
+/* 快速预约 预约单 tab */
+.changetab{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size:28rpx;
+  padding: 0 25%;
+  display: flex;
+  justify-content: space-between;
+  background:#fff;
+}
+.changetab .check{
+  color: #FF383E;
+  border-bottom: 5rpx solid rgba(255,56,62,1);
+}
+.changetab .default{
+  color: #444;
+}
+/* 客户信息预约单的样式开始 */
+.container_order{
+  min-height: 94%;
+  overflow: hidden;
+  background:white;
+  border-top:3rpx solid #F9F9F9;
+}
+/* 预约单占位符 */
+.orderholder{
+  width: 100%;
+}
+::-webkit-scrollbar {display:none}
+
+.orderholder image{
+  width:210rpx;
+  height: 210rpx;
+  position: absolute;
+  top: 35%;
+  left: 52%;
+  transform: translateX(-114rpx)
+}
+.orderholder view{
+  font-size: 28rpx;
+  color: #666;
+  position: absolute;
+  top: 55%;
+  left: 48%;
+  transform: translateX(-114rpx)
+}
+/* 头部区域 */
+.order_top{
+  width: 100%;
+  position: absolute;
+  top:6%;
+  left: 0;
+  z-index: 1;
+}
+.search_input{
+  padding: 30rpx;
+  position: relative;
+  border-bottom: 3rpx solid #F9F9F9;
+  margin-bottom: 30rpx;
+}
+.search_input .search_icon{
+  position: absolute;
+  left: 46rpx;
+  top: 45rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.search_input input{
+  height: 64rpx;
+  border-radius:40rpx;
+  font-size: 28rpx;
+  padding-left: 70rpx;
+  border: 2rpx solid #ccc;
+}
+/* 切换后的样式 */
+.search_input2{
+  padding: 30rpx 120rpx 30rpx 30rpx ;
+  position: relative;
+}
+.search_input2 .search_icon2{
+  position: absolute;
+  left: 46rpx;
+  top: 45rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.search_input2 input{
+  height: 64rpx;
+  border-radius:40rpx;
+  font-size: 28rpx;
+  padding-left: 70rpx;
+  padding-right:70rpx;
+  border: 2rpx solid #ccc;
+  z-index: 1;
+}
+.clear_icon{
+  width: 38rpx;
+  height: 38rpx;
+  position: absolute;
+  right: 145rpx;
+  top: 46rpx;
+  z-index: 10;
+}
+.search_input2 text:last-child{
+  position: absolute;
+  right: 35rpx;
+  top: 45rpx;
+  font-size:28rpx;
+  color: #333333;
+}
+
+/* 订单列表 */
+.order_list{
+  position: absolute;
+  top: 16%;
+  z-index: 10;
+  overflow: auto;
+  width:100%;
+}
+.order{
+  /* margin-top:20rpx; */
+  font-size: 28rpx;
+  color: #333333;
+  height:518rpx;
+}
+.order_list::-webkit-scrollbar{
+  display: none;
+}
+.order_list .order_item{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #F5F5F5;
+}
+.order_list .order_item .side_time{
+  font-size:28rpx;
+  color:rgba(51,51,51,1);
+  font-weight: 500;
+  margin: 0 30rpx;
+  
+}
+.order_list .order_item .section{
+  margin:0 30rpx 20rpx;
+  background: #fff;
+  
+}
+.order_list .order_item .section .text_msg{
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #F5F5F5
+}
+.order_list .order_item .section .text_msg text:last-child{
+  color:#FF383E;
+  float: right;
+}
+.section_list{
+  display: flex;
+  margin-top: 20rpx;
+  height: 175rpx;
+}
+.sectionLeft{
+  flex: 1;
+}
+.sectionLeft image{
+  width:172rpx;
+  height:172rpx;
+  background: pink;
+}
+.sectionRight{
+  flex: 3;
+  margin-left: 20rpx;
+}
+.text_name{
+  height: 50rpx;
+}
+.titile{
+  line-height: 35rpx;
+}
+.hospital{
+  font-size: 24rpx;
+  color: #666666;
+}
+.order_list .order_item .section .order_btn{
+  display: flex;
+  justify-content: space-between;
+  height: 48rpx;
+  line-height: 48rpx;
+  margin-top: 10rpx;
+}
+.btn{
+  display: inline-block;
+  width:160rpx;
+  height:60rpx;
+  border-radius:30rpx;
+  border:2rpx solid rgba(204,204,204,1);
+  float: right;
+  text-align: center;
+  line-height: 60rpx;
+  color: #999999;
+}
+.order_list .order_item .section .order_btn .state{
+  font-size:28rpx;
+  color:rgba(254,68,137,1);  
+}
+.order_list .order_item .section .order_btn .cancel{
+  font-size:28rpx;
+  color:#ccc; 
+  height: 44rpx;
+  line-height: 44rpx;
+  border: 2rpx solid #ccc;
+  padding: 0 20rpx; 
+  border-radius: 24rpx;
+}
+
+/* 取消预约 */
+.order_list .order_item .close{
+  font-size:28rpx;
+  color:rgba(254,68,137,1);
+  padding-top:20rpx; 
+  text-align: center;
+  margin-top: 24rpx;
+  border-top: 2rpx solid rgba(255,216,224,1);
+}
+/* 客户信息预约单的样式结束 */

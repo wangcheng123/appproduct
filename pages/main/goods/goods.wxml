@@ -1,0 +1,99 @@
+<!--pages/main/goods/goods.wxml-->
+<view class="goods_container">
+ <modal id="modal" show="{{showModal}}" height='28%' btn1="暂不申请" btn2="立即申请">
+    <view class="toast">请先免费申请成为商户</view>
+  </modal>
+  <view class='goodsTop' wx:if='{{isShowclass}}'>
+    <view class='goodsnav'>
+      <block wx:for="{{['PLUS会员卡','服务','平台商品']}}" wx:key="id">
+        <text bindtap='changeNav' data-index="{{index}}" class="{{currentIndex==index ? 'on':''}}">{{item}}</text>
+      </block>
+    </view>
+    <view class='subnav' wx:if="{{currentIndex==2}}">
+      <text bindtap='changetab' data-current="0" class="{{currentTab==0 ? 'on':''}}">全部</text>
+
+      <block wx:for="{{cates}}" wx:key="index">
+        <text bindtap='changetab' data-current="{{item.id}}" class="{{currentTab==item.id ? 'on':''}}">{{item.name}}</text>
+      </block>
+    </view>
+
+    <!-- 没有商品 -->
+    <view class='noClient' wx:if="{{goods.length == 0}}">
+      <view class='noClientImg'>
+        <image src='https://img.ameimeika.com/server/64d2b0badfb01b5be484472cc91726f8.png'></image>
+      </view>
+      <view class='noClientText'>
+        <view>没有商品喔～</view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- 全部列表 -->
+  <scroll-view class="swiper-box" scroll-y style="width: 100%" bindscrolltolower='lower' wx:if="{{goods.length > 0}}">
+  <view class='goodsList' wx:if="{{currentIndex!=2}}">
+      <!-- 列表布局 -->
+      <view class='goodsListone'>
+        <!-- 左右整个 -->
+        <view class="goodsList_son" wx:for="{{goods}}" wx:key="id">
+          <view class="main_card" wx:if="{{currentIndex==0}}">
+            <view class="title">{{item.name}}</view>
+            <view class="stitle">{{item.desc}}</view>
+            <view class="num">
+              <view class="left">￥
+                <text>{{item.sale_price}}</text>
+              </view>
+              已售{{item.sale_num}}
+            </view>
+          </view>
+          <block wx:else>
+            <view class="goods_main">
+              <image src="{{imgUrl+item.img}}"></image>
+              <view class="fonts">
+                <view class="title">{{item.service_name}}</view>
+                <view class="stitle">{{item.service_desc}}</view>
+                <view class="num">￥
+                  <text>{{item.price}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="btn" bindtap="jumpApp">立即推荐</view>
+        </view>
+
+      </view>
+    </view>
+    <view class='goodsList' wx:if="{{currentIndex==2}}">
+      <!-- 列表布局 -->
+      <view class='goodsListone1'>
+        <!-- 左右整个 -->
+        <block wx:for="{{goods}}" wx:for-index='i' wx:key="m" wx:for-item="good">
+          <view class='goodsList_son1'>
+            <block wx:for="{{good}}" wx:for-index='j' wx:key="n">
+              <view data-id='{{item.id}}' bindtap='jumpApp' class='{{j==0?"goodsListLeft":"goodsListRight"}}'>
+                <view class='goodsImg'>
+                  <image src='{{imgUrl}}{{item.images}}'></image>
+                </view>
+                <view class='goodsListTop'>
+                  <view class='titile'>{{item.title}}</view>
+                  <view class='describe'>{{item.descript}}</view>
+                  <view class='price'>
+                    <text>￥</text>
+                    <text>{{item.price}}</text>
+                  </view>
+                  <view class='rewardPrice'>推荐后最高获得奖励{{item.fx}}元</view>
+                  <view class='commend'>
+                    <view class="btn">立即推荐</view>
+                  </view>
+                </view>
+
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+
+    </view>
+  </scroll-view>
+</view>

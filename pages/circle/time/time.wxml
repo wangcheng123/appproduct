@@ -1,0 +1,32 @@
+<!-- time.wxml -->
+<view class='container_time'>
+  <!-- 选择时间 -->
+  <view class='select_time' >
+    <view class="picker item_select {{type==1?'color':''}}" data-type='1' bindtap='check_type'>
+      {{tstart.year}}年{{tstart.month}}月{{tstart.day}}日
+    </view>
+    <text>至</text>  
+    <view class="picker item_select {{type==2?'color':''}}" data-type='2'  bindtap='check_type'>
+      {{tend.year}}年{{tend.month}}月{{tend.day}}日
+    </view>
+  </view>
+
+  <picker-view indicator-style="height: 50px;" class='pricker-view' value="{{value}}"  bindchange="dchange">
+    <picker-view-column>
+      <view style="line-height: 50px" wx:for="{{years}}" wx:key >{{item}}年</view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view style="line-height: 50px" wx:for="{{months}}" wx:key >{{item}}月</view>
+    </picker-view-column>
+    
+    <picker-view-column>
+      <view style="line-height: 50px"  wx:for="{{days}}" wx:key>{{item}}日</view>
+    </picker-view-column>
+  </picker-view>
+
+  <!-- 确定按钮 -->
+  <view bindtap='timesub' class='sub_btn'>
+    <text>确定</text>
+  </view>
+</view>

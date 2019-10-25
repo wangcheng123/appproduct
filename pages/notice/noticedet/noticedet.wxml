@@ -1,0 +1,12 @@
+<!-- noticedet.wxml -->
+<view class='container_noticedet'>
+  <view class='hr'></view>
+  <view class='n_panel'>
+    <view>{{pData.title}}</view>
+    <view class='ndet_time'>{{pData.created_at}}</view>
+    <image class='ndet_img' src='{{imgUrl}}{{pData.img}}' wx:if="{{pData.img}}"></image>
+    <view class='ndet_det'>
+      <text>{{pData.descript}}</text>
+    </view>
+  </view>
+</view>

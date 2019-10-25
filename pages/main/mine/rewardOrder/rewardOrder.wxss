@@ -1,0 +1,101 @@
+/* pages/main/mine/rewardOrder/rewardOrder.wxss */
+.myClient{
+  width: 100%;
+  background: white;
+}
+.line{
+  width: 100%;
+  height: 20rpx;
+  background: #F5F5F5;
+}
+
+/* 奖励订单 */
+.rewardOrder{
+  width: 100%;
+  height: 100%;
+  background: #F5F5F5;
+}
+.rewardOrderFlex{
+  margin: 0 30rpx;
+}
+/* 单个订单 */
+.orders{
+  background:rgba(255,255,255,1);
+  border-radius:16rpx;
+  margin-bottom: 20rpx;
+}
+/* 订单第一部分 */
+.ordersWhole{
+  padding: 20rpx;
+}
+.ordersWhole_One{
+  font-size: 28rpx;
+  color: #333333;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #F5F5F5;
+}
+.phone{
+  margin-left: 25rpx;
+}
+.time{
+  float: right;
+}
+/* 订单第二部分 */
+.ordersWhole_Two{
+  display: flex;
+  margin: 20rpx 0 0;
+  padding-bottom: 10rpx;
+  border-bottom: 2rpx solid #F5F5F5;
+}
+.orderLeftImg{
+  flex: 1;
+}
+.orderRightText{
+  flex: 4;
+}
+.orderRightText{
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.orderRightTextOne .number{
+  float: right
+}
+.orderRightNumber{
+  color: #666666;
+  margin-top: 60rpx;
+}
+.orderLeftImg image{
+  width:140rpx;
+  height:140rpx;
+  background: pink;
+}
+/* 订单第三部分 */
+.orderWhole_three{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.defail{
+  color: #333333;
+}
+.red{
+  color: #FF383E;
+  float: right;
+}
+
+/* 没有奖励订单样式 */
+.noClientImg image{
+  width: 210rpx;
+  height: 210rpx;
+}
+.noClient{
+  text-align: center;
+  margin-top: 50%;
+  background: white;
+  margin-left: 8%;
+}
+.noClientText{
+  font-size: 28rpx;
+  color: #666666;
+  margin-top: 15rpx;
+}

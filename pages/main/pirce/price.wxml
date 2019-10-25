@@ -1,0 +1,57 @@
+<!--pages/main/pirce/price.wxml-->
+<view class="container_main">
+  <!-- info -->
+  <view class="info">
+    审核通过5天后待提现金额转为可提现
+  </view>
+  <!-- card -->
+  <view class="card">
+    <view class="h2">当期余额</view>
+    <view class="price">{{params.all_money}}</view>
+    <view class="box">
+      <text class="name">待提现</text>
+      <text class="nprice">{{params.unbooked}}</text>
+    </view>
+    <view class="box">
+      <text class="name">可提现</text>
+      <text class="nprice">{{params.reward}}</text>
+    </view>
+    <view class="box">
+      <text class="name">累积提现</text>
+      <text class="nprice">{{params.all_withdrawals}}</text>
+    </view>
+    <view class="btn">
+      <view class="orgin navigator" bindtap="godetail" open-type='navigate' url='/pages/index/index'>收支明细</view>
+      <view class="tixian navigator" bindtap="checkfun" open-type='navigate' url='/pages/index/index'>提现</view>
+    </view>
+  </view>
+  <!-- list -->
+  <view class="list">
+    <view class="lbox">
+      <text class="name"> Plus会员分销累积奖励</text>
+      <text class="lprice">{{params.plush_reward}}</text>
+    </view>
+
+    <view class="lbox">
+      <text class="name"> 服务订单累积奖励</text>
+      <text class="lprice">{{params.orders_reward}}</text>
+    </view>
+
+    <view class="lbox">
+      <text class="name"> 项目推荐累积奖励</text>
+      <text class="lprice">{{params.apply_reward}}</text>
+    </view>
+
+    <view class="lbox">
+      <text class="name"> 商品分销累积奖励</text>
+      <text class="lprice">{{params.goods_reward}}</text>
+    </view>
+  </view>
+  <modal id="modal" show="{{showModal}}" height='28%' ptype='5' btn1="继续提现" btn2="申请成为商户" bindcancel="modalCancel" bindconfirm='modalConfirm'>
+    <image class="close" bindtap="closemodal" src="https://img.ameimeika.com/h5_images/businessAssistant/icon_close.png"></image>
+    <view class="toast">
+
+      建议您先免费申请成为商户再提现商户可在平台上架商品进行售卖
+    </view>
+  </modal>
+</view>

@@ -1,0 +1,88 @@
+<!-- group.wxml role_id-->
+<view class='container_group'>
+  <view class='test-box'>
+    <view class='teamPerformance' wx:if="{{false}}">
+      <view>团队总业绩</view>
+      <view class='performance'>{{teamAchieve}}</view>
+    </view>
+
+    <view class='navWhole'>
+      <view class='navWholeone' bindtap='select_open'>
+
+        <text class='{{stype?"color":""}}'>{{type==0?"全部":(type==1?"生美店家":(type==2?"会员用户":"其他"))}}</text>
+
+        <image wx:if="{{!stype && !sopen}}"src="https://img.ameimeika.com/server/e87a5225745784fa9329243b7afcdd96.png" ></image>
+        <image wx:if="{{!stype && sopen}}"  src="https://img.ameimeika.com/server/1eea67628fdd93d3bfadb269340d0cad.png" ></image>
+
+        <image wx:if="{{stype  &&  sopen}}" src="https://img.ameimeika.com/server/0b5ceaea76afdf9ce98a8722dc366ea7.png" ></image>
+        <image wx:if="{{stype && !sopen}}" src="https://img.ameimeika.com/server/018d57516ba0a50eac17843e3f1ffd46.png" ></image>
+
+      </view>
+
+      <view class='line'></view>
+
+      <view class='navWholeTwo' wx:if="{{!ssort}}" bindtap='select_sort'>
+        <text>业绩排名</text>
+        <image class='img1' src='https://img.ameimeika.com/server/1eea67628fdd93d3bfadb269340d0cad.png'></image>
+        <image class='img2' src='https://img.ameimeika.com/server/e87a5225745784fa9329243b7afcdd96.png'></image>
+      </view>
+
+      <view class='navWholeTwo' bindtap='select_sort' wx:else>
+        <text class='color'>业绩排名</text>
+        <block wx:if="{{sort == 0}}">
+          <image class='img1' src='https://img.ameimeika.com/server/0b5ceaea76afdf9ce98a8722dc366ea7.png'></image>
+          <image class='img2' src='https://img.ameimeika.com/server/e87a5225745784fa9329243b7afcdd96.png'></image>
+        </block>
+        <block wx:else>
+          <image class='img1' src='https://img.ameimeika.com/server/1eea67628fdd93d3bfadb269340d0cad.png'></image>
+          <image class='img2' src='https://img.ameimeika.com/server/018d57516ba0a50eac17843e3f1ffd46.png'></image>
+        </block>
+      </view>
+
+    </view>
+  </view>
+  <view class='test-box2'>
+    <scroll-view scroll-y class="group_scroll c-one" >
+      <view>
+        <!-- 列表item -->
+        <view wx:if="{{!isshow}}" style='margin-top:20rpx;'>
+
+          <view class='group_list' wx:for="{{teams}}" wx:key>
+            <view class='list_top'>
+              <view class='top_left'>
+                <image src='{{imgUrl+item.headimgurl}}'></image>
+              </view>
+              <view class='top_right'>
+                <text>{{item.realname?item.realname:item.nickname}}<text class='phone'>{{item.username}}</text></text>
+                <view>{{item.type_name}}({{item.role}})</view>
+              </view>
+            </view>
+            <view class='list_bot'>
+              <text>加入时间：{{item.join_time}}</text>
+              <text>当月业绩：{{item.month_achieve}}</text>
+            </view>
+          </view>
+
+        </view>
+
+        <!-- 占位符 -->
+        <view class='holderimg' wx:if="{{isshow}}">
+          <image src='https://img.ameimeika.com/server/a743e7542cb9849c4fcd2767cfe91a58.png'></image>
+          <view>暂时还没有团队成员哦</view>
+          <view>继续努力！</view>
+        </view>
+
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="listwrap " wx:if="{{sopen}}">
+    <view class="list s-one ">
+      <view data-type='0' bindtap='select_type'>全部</view>
+      <view data-type='1' bindtap='select_type'>生美店家</view>
+      <view data-type='2' bindtap='select_type'>会员用户</view>
+      <view data-type='3' bindtap='select_type' wx:if="{{redirect_type == 3}}">其他</view>
+    </view>
+  </view>
+
+</view>

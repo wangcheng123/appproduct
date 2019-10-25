@@ -1,0 +1,8 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "分享",
+  "usingComponents": {
+    "modal": "../../../components/modal/modal"
+  }
+}

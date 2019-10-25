@@ -1,0 +1,272 @@
+/* circle.wxss */
+
+.container_circle {
+  background: #f5f5f5;
+}
+
+.circle_area {
+  padding-top: 35rpx;
+  height: 110rpx;
+  width: 100%;
+}
+
+/* 推荐奖励 分销奖励tab */
+
+.circle_area .circletab {
+  width: 50%;
+  margin: 0 25% 35rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  border-radius: 16rpx;
+  border: 2rpx solid rgba(255, 56, 62, 1);
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.circle_area .circletab .default {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.circle_area .circletab .tabselect {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  font-size: 28rpx;
+  background: rgba(255, 56, 62, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+/* 奖励提现面板 */
+
+.circle_panel {
+  z-index: 1;
+  position: relative;
+}
+
+.circle_panel .panel {
+  min-height: 450rpx;
+  background: #fff;
+}
+
+.circle_panel .panel .part {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+}
+
+.circle_panel .panel .part .part_num {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.circle_panel .panel .panel_toptxt {
+  padding: 30rpx 30rpx 0;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle_panel .panel .panel_toptxt .tab_right image {
+  width: 12rpx;
+  height: 22rpx;
+}
+
+.circle_panel .panel .panel_toptxt .tab_right text {
+  margin-right: 20rpx;
+}
+
+.circle_panel .panel .panel_num {
+  font-size: 50rpx;
+  margin: 30rpx 30rpx;
+  overflow: auto;
+}
+
+.circle_panel .panel .sales_number {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+}
+
+.circle_panel .panel .sales_number .sales_num {
+  font-size: 28rpx;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.withdrawable {
+  font-size: 38rpx;
+  color: #333;
+}
+
+.circle_panel .panel .panel_extract {
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  margin-top: 15rpx;
+}
+
+.circle_panel .panel .panel_extract text {
+  display: inline-block;
+  width: 144rpx;
+  height: 64rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border: 2rpx solid #ff383e;
+  border-radius: 32rpx;
+  color: #ff383e;
+}
+
+/* 当天 累计 奖励 */
+
+.circle_award {
+  display: flex;
+  margin: 0 30rpx;
+  justify-content: space-around;
+  text-align: center;
+  border-top: 2rpx solid #eee;
+  border-bottom: 2rpx solid #eee;
+}
+
+.circle_award .award_item {
+  max-width: 33%;
+  overflow: auto;
+  margin: 40rpx 0;
+}
+
+.circle_award .award_item .award_num {
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  color: #333;
+  margin-top: 10rpx;
+}
+
+.circle_award .award_item .award_txt {
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+  color: #999;
+}
+
+.circle_award .divide {
+  width: 0;
+  height: 56rpx;
+  border: 2rpx solid #f5f5f5;
+  margin-top: 55rpx;
+}
+
+.noticetxt {
+  font-size: 24rpx;
+  color: #ff383e;
+  margin: 30rpx;
+}
+
+/* 我的团队按钮 */
+
+.tbtn {
+  margin: 30rpx 60rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tbtn .item_btn {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #ff383e;
+  box-shadow: 0rpx 8rpx 16rpx 0rpx rgba(255, 223, 234, 1);
+  border-radius: 46rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.item_btn.bind {
+  background: rgba(255, 118, 165, 1);
+  box-shadow: 0px 8rpx 16rpx 0px rgba(255, 223, 234, 1);
+}
+
+.unit {
+  font-size: 20rpx;
+  color: #666;
+}
+
+/* 统计图 */
+
+.sevenCanvas {
+  width: 100%;
+  background: white;
+}
+
+.chart_tit {
+  text-align: center;
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular;
+  color: #333;
+  padding-top: 30rpx;
+}
+
+.canvas {
+  width: 100%;
+  margin-left: -5%;
+}
+
+.circle_panel .item {
+  /* margin: 0 40rpx; */
+  padding: 30rpx 30rpx;
+  display: flex;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  position: relative;
+  color: #666;
+}
+
+.circle_panel .item>.arrow {
+  position: absolute;
+  width: 12rpx;
+  height: 22rpx;
+  top: 32rpx;
+  right: 30rpx;
+}
+
+.someTab {
+  height: 72rpx;
+  background-color: #fff2e1;
+}
+
+.someTab {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #1d2023;
+  padding: 0 30rpx;
+}
+
+.someTab .jinshiImg {
+  width: 28rpx;
+  height: 24rpx;
+  margin-right: 8rpx;
+  position: relative;
+  top: 1rpx;
+}
+
+.someTab .backIcon {
+  width: 12rpx;
+  height: 22rpx;
+}

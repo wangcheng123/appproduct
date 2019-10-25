@@ -1,0 +1,93 @@
+<!-- <view class='modal-content' style='height:{{height}}'>
+    <scroll-view scroll-y class='main-content'>
+      <slot></slot>
+    </scroll-view>
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn' style='color:#999;' bindtap='cancel'>{{btn1}}</view>
+      <view class='confirm-btn' style='color:#FF383E' bindtap='confirm'>{{btn2}}</view>
+    </view>
+  </view> -->
+<!-- <view class='mask' wx:if='{{show}}'>
+  <view class="content">
+    <view class="tag">
+      <view class="title">明细类型</view>
+      <view class="tags">
+        <text>全部类型</text>
+        <text>全部类型</text>
+        <text>全部类型</text>
+        <text>全部类型</text>
+        <text>全部类型</text>
+        <text>全部类型</text>
+      </view>
+    </view>
+    <view class="time">
+      <view class="title">选择日期</view>
+      <view class="pack">
+        <view>{{year}}年{{month}}月{{day}}日</view>
+        <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+          <picker-view-column>
+            <view wx:for="{{years}}" style="line-height: 50px">{{item}}年</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{months}}" style="line-height: 50px">{{item}}月</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{days}}" style="line-height: 50px">{{item}}日</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn btn' bindtap='cancel'>取消</view>
+      <view class='confirm-btn btn' bindtap='confirm'>确定</view>
+    </view>
+  </view>
+</view> -->
+
+
+<view class="mask" wx:if="{{show}}">
+  <view class="content">
+    <view class="tag">
+      <view class="title">明细类型</view>
+      <view class="tags">
+        <text data-id="{{item.id}}" wx:for="{{catelist}}" class="{{item.id==cateid?'active':''}}" bindtap="catefun">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='container_time'>
+    <!-- 选择时间 -->
+    <view class='select_time'>
+      <view class="picker item_select {{type==1?'color':''}}" data-type='1' bindtap='check_type'>
+        {{tstart.year}}年{{tstart.month}}月{{tstart.day}}日
+      </view>
+      <text>至</text>
+      <view class="picker item_select {{type==2?'color':''}}" data-type='2' bindtap='check_type'>
+        {{tend.year}}年{{tend.month}}月{{tend.day}}日
+      </view>
+    </view>
+
+    <picker-view indicator-style="height: 112rpx;" class='pricker-view' value="{{value}}" bindchange="dchange">
+      <picker-view-column>
+        <view style="line-height: 61rpx" wx:for="{{years}}" wx:key>{{item}}年</view>
+      </picker-view-column>
+
+      <picker-view-column>
+        <view style="line-height: 61rpx" wx:for="{{months}}" wx:key>{{item}}月</view>
+      </picker-view-column>
+
+      <picker-view-column>
+        <view style="line-height: 61rpx" wx:for="{{days}}" wx:key>{{item}}日</view>
+      </picker-view-column>
+    </picker-view>
+
+    <!-- 确定按钮 -->
+    <view class="btn_box">
+      <view bindtap='cancel' class='sub_btn'>
+        确定
+      </view>
+      <view bindtap='confirm' class='sub_btn off_btn'>
+        取消
+      </view>
+    </view>
+  </view>
+</view>

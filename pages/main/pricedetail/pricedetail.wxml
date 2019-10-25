@@ -1,0 +1,110 @@
+<view class="container_main">
+  <view class="search">
+    <view class="name">
+      <text>筛选-全部类型</text>
+      <image bindtap="opensea" src="https://img.ameimeika.com/h5_images/businessAssistant/icon_screen.png"></image>
+    </view>
+  </view>
+
+
+  <view class="section">
+    <view class="time">
+      <!-- <picker mode="date" value="{{tdate}}" bindchange="tbindDateChange">
+        <view class="picker">
+          {{tdate}}
+        </view>
+      </picker> -->
+      <view class="picker" bindtap="opentime">
+        {{tstart.year}}年{{tstart.month}}月{{tstart.day}}日
+      </view>
+      <text>至</text>
+      <view class="picker" bindtap="opentime">
+        {{tend.year}}年{{tend.month}}月{{tend.day}}日
+      </view>
+    </view>
+
+    <view class="price">
+      <text>收入：￥{{datas.reward_int}}</text>
+      <text>收支出：￥{{datas.reward_out}}</text>
+    </view>
+  </view>
+
+  <view class="list">
+    <view class="box" wx:for="{{list}}">
+      <view class="title">
+        <text>{{item.created_at}}</text>
+        <image wx:if="{{isopen==item.id}}" bindtap="listdeatil" src="https://img.ameimeika.com/h5_images/businessAssistant/icon_pullopen.png"></image>
+        <image wx:else bindtap="listdeatil" data-id="{{item.id}}" src="https://img.ameimeika.com/h5_images/businessAssistant/icon_putaway.png"></image>
+      </view>
+      <view class="bprice">
+        <view class="txt">{{item.remark}}
+          <text class="icon" wx:if="{{item.trans_status>0}}">{{item.trans_status==1?'审核中':'已通过'}}</text>
+        </view>
+        <text class="{{item.status==0?'znum':''}}">{{item.amount}}</text>
+      </view>
+      <view class="blist" wx:if="{{isopen==item.id}}">
+        <view>
+          <text>订单号</text>
+          <text>{{item.order_sn}}</text>
+        </view>
+        <view>
+          <text>推荐人</text>
+          <text>{{item.ref_name}}({{item.ref_phone}})</text>
+        </view>
+        <view>
+          <text>成交用户</text>
+          <text>{{item.user_name}}({{item.user_phone}})</text>
+        </view>
+        <view>
+          <text>成交金额</text>
+          <text>￥{{item.pay_amount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <search id="search" show="{{showModal}}" height='28%' starttime="{{tdate}}" endtime="{{edate}}" btn1="暂不提现" btn2="申请成为商户" bindcancel="modalCancel" bindconfirm='modalConfirm'>
+
+  </search>
+
+
+  <!-- 选择时间弹框 -->
+  <view class="mask" wx:if="{{isTime}}">
+    <view class='container_time'>
+      <!-- 选择时间 -->
+      <view class='select_time'>
+     
+        <view class="picker item_select {{type==1?'color':''}}" data-type='1' bindtap='check_type'>
+          {{tstart.year}}年{{tstart.month}}月{{tstart.day}}日
+        </view>
+        <text>至</text>
+        <view class="picker item_select {{type==2?'color':''}}" data-type='2' bindtap='check_type'>
+          {{tend.year}}年{{tend.month}}月{{tend.day}}日
+        </view>
+      </view>
+
+      <picker-view indicator-style="height: 112rpx;" class='pricker-view' value="{{value}}" bindchange="dchange">
+        <picker-view-column>
+          <view style="line-height: 61rpx" wx:for="{{years}}" wx:key>{{item}}年</view>
+        </picker-view-column>
+
+        <picker-view-column>
+          <view style="line-height: 61rpx" wx:for="{{months}}" wx:key>{{item}}月</view>
+        </picker-view-column>
+
+        <picker-view-column>
+          <view style="line-height: 61rpx" wx:for="{{days}}" wx:key>{{item}}日</view>
+        </picker-view-column>
+      </picker-view>
+
+      <!-- 确定按钮 -->
+      <view class="btn_box">
+        <view bindtap='timesub' class='sub_btn'>
+          确定
+        </view>
+        <view bindtap='timesub' class='sub_btn off_btn'>
+          取消
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

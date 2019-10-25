@@ -1,0 +1,27 @@
+/* pages/login/index/index.wxss */
+.login_form{
+  min-height: 10%;
+  padding: 150rpx 13% 0;
+}
+.wxlogin{
+  text-align: center;
+  color:rgba(255,255,255,1);
+  font-size: 32rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background:rgba(255,56,62,1);
+  border-radius: 45rpx;
+  margin-bottom: 40rpx;
+}
+.aclogin{
+  text-align: center;
+  font-size: 32rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+  border:2rpx solid rgba(255,56,62,1);
+  background: transparent;
+  color: #FF383E;
+  margin-bottom: 40rpx;
+}
+

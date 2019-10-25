@@ -1,0 +1,128 @@
+/* pages/main/pirce/price.wxss */
+
+.container_main {
+  font-family: PingFangSC-Regular;
+}
+
+.info {
+  background: #fff8d1;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #dd9762;
+  padding: 30rpx 34rpx 30rpx 30rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.card {
+  border: 2rpx solid #ffdcdc;
+  background: #fafafa;
+  height: 488rpx;
+  margin: 30rpx;
+  padding: 130rpx 30rpx 40rpx 30rpx;
+}
+
+.card .h2 {
+  color: #333;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.card .price {
+  font-size: 64rpx;
+  font-weight: 700;
+  color: #ff383e;
+  margin: 30rpx 0;
+}
+
+.card .box {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+}
+
+.card .box .name {
+  color: #666;
+}
+
+.card .box .nprice {
+  color: #ff383e;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.navigator + .navigator {
+  margin-left: 30rpx;
+}
+
+.navigator {
+  width: 300rpx;
+  height: 80rpx;
+  text-align: center;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 80rpx;
+}
+
+.orgin {
+  background: #fee;
+  color: #ff383e;
+}
+
+.tixian {
+  background: #ff383e;
+  color: #fff;
+}
+
+.list {
+  height: 584rpx;
+  background: #fafafa;
+  border-radius: 10rpx;
+  margin: 0 30rpx 30rpx 30rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+
+.lbox {
+  display: flex;
+  flex-flow: column;
+}
+
+.lbox .name {
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+
+.lprice {
+  color: #ff383e;
+  font-size: 48rpx;
+  font-weight: 700;
+}
+
+.toast {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.close {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 24rpx;
+}

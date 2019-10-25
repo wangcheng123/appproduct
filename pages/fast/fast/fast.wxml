@@ -1,0 +1,168 @@
+<!-- fast.wxml -->
+<view class="container_fasts">
+  <!-- 快速预约 预约单 tab -->
+  <view class='changetab'>
+    <view class="check" hover-class='none'>快速预约</view>
+    <navigator url='../bookingForm/bookingForm' class="default" hover-class='none'>预约单</navigator>
+  </view>
+
+  <!-- 快速预约单 板块 -->
+  <!-- 头部导航 -->
+  <view class='top_area'>
+    <view class='nav_bar'>
+      <text class='finish'>预约信息</text>
+      <text>客户信息</text>
+      <text>其他信息</text>
+    </view>
+    <view class='dotlist'>
+      <view class='progress'>
+        <view class='line'>
+          <view class='pro'></view>
+        </view>
+        <text class='dot finish'></text>
+        <text class='dot'></text>
+        <text class='dot'></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 信息填写 -->
+  <view class='fast_list'>
+    <!-- 预约时间 -->
+    <view class='fast_time listitem'>
+      <!-- 箭头图标 -->
+      <view class='item_next'>
+        <image src='https://img.ameimeika.com/server/723fd8252ad81d912a92044a8c5f2f43.png'></image>
+      </view>
+      <text>*</text>
+      <label>预约时间:</label>
+
+      <picker class='item_select' mode="date" value="{{date}}" start="{{start_time}}" end="{{end_time}}" bindchange="bindDateChange">
+        <view wx:if="{{date==''}}" class="picker">
+          请选择预约时间
+        </view>
+
+        <view wx:else class="picker select">
+          {{date}}
+        </view>
+
+      </picker>
+    </view>
+
+    <!-- 预约地址 -->
+    <view class='fast_address listitem'>
+      <!-- 箭头图标 -->
+      <view class='item_next'>
+        <image src='https://img.ameimeika.com/server/723fd8252ad81d912a92044a8c5f2f43.png'></image>
+      </view>
+      <text>*</text>
+      <label>预约地址:</label>
+
+      <picker class='item_select' range='{{multiArray}}' mode="multiSelector" value="{{address}}" bindcolumnchange="change_province" bindchange="change_addr">
+        <view class="picker" wx:if="{{!addressStr}}">
+          请选择地址
+        </view>
+
+        <view class="picker select" wx:else>
+          {{addressStr}}
+        </view>
+
+      </picker>
+
+    </view>
+
+    <!-- 预约医院 -->
+    <view class='fast_hospital listitem'>
+      <!-- 箭头图标 -->
+      <view class='item_next'>
+        <image src='https://img.ameimeika.com/server/723fd8252ad81d912a92044a8c5f2f43.png'></image>
+      </view>
+      <text>*</text>
+      <label>预约医院:</label>
+
+      <picker class='item_select' range='{{hosRange}}' bindchange='change_hos' value='{{hospital}}'>
+        <view class="picker" wx:if="{{!hosStr}}">
+          请选择医院
+        </view>
+
+        <view class="picker select" wx:else>
+          {{hosStr}}
+        </view>
+
+      </picker>
+
+    </view>
+
+    <!-- 预约项目 -->
+    <view class='fast_project listitem'>
+      <!-- 箭头图标 -->
+      <view class='item_next'>
+        <image src='https://img.ameimeika.com/server/723fd8252ad81d912a92044a8c5f2f43.png'></image>
+      </view>
+      <text>*</text>
+      <label>预约项目:</label>
+      <picker class='item_select' range='{{proRange}}' bindchange='change_pro' value='{{project}}'>
+        <view class='picker' wx:if="{{!proStr}}">
+          请选择预约项目
+        </view>
+        <view class='picker select' wx:else>
+          {{proStr}}
+        </view>
+
+      </picker>
+    </view>
+
+
+    <!-- 预约分类未选中 -->
+    <view class='listitem newChange' wx:if="{{isShowNoActive}}">
+      <!-- 箭头图标 -->
+      <view class='item_next'>
+        <image src='https://img.ameimeika.com/server/723fd8252ad81d912a92044a8c5f2f43.png'></image>
+      </view>
+      <text>*</text>
+      <label>预约分类:</label>
+      <view class='newChangeText listitem' bindtap='gotoCateDetail'>请选择预约分类
+      </view>
+    </view>
+
+    <!-- 预约分类选中 -->
+    <view class='activeNewChange listitem' wx:if="{{isShowActive}}" bindtap='gotoCateDetail'>
+      <text>*</text>
+      <label>预约分类:</label>
+      <view class='activeNewChangeText'>
+      <!-- 只有其他才展示 -->
+        <view class='item_next' wx:if="{{isOther}}">
+          <image src='https://img.ameimeika.com/server/723fd8252ad81d912a92044a8c5f2f43.png'></image>
+        </view>
+        <view>{{ gradeOne.name }}</view>
+        <view>{{ gradeTwo.name }}</view>
+        <view>{{ gradeThree.name }}</view>
+      </view>
+    </view>
+
+    <!-- 预约类型 -->
+    <view class='fast_type listitem'>
+      <!-- 箭头图标 -->
+      <view class='item_next'>
+        <image src='https://img.ameimeika.com/server/723fd8252ad81d912a92044a8c5f2f43.png'></image>
+      </view>
+      <text>*</text>
+      <label>预约类型:</label>
+
+      <picker class='item_select' bindchange="orderTypeChange" range="{{order_types}}">
+        <view class='picker select' wx:if="{{order_type}}">
+          {{order_types[order_type-1]}}
+        </view>
+        <view class='picker' wx:else>
+          请选择预约类型
+        </view>
+      </picker>
+    </view>
+
+    <!-- 下一步按钮 -->
+    <button bindtap='nexthrefto' class='next_btn'>下一步</button>
+  </view>
+  <view class="toast" wx:if="{{is_show_toast}}">
+    {{toast_msg}}
+  </view>
+</view>

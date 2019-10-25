@@ -1,0 +1,52 @@
+/* time.wxss */
+.container_time{
+  width: 100%;
+}
+/* 主体内容 */
+.select_time{
+  margin-top: 20%;
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 5%;
+  font-size: 34rpx;
+  color:#333333;
+}
+.select_time .item_select{
+  width: 45%;
+  text-align: center;
+  border-bottom: 2rpx solid rgba(204,204,204,1);
+}
+.select_time .picker{
+  font-size: 30rpx;
+  color: #333333;
+  margin-left: 7rpx;
+}
+.select_time .color{
+  color: #FF383E;
+}
+.select_time .picker.select{
+  font-size: 30rpx;
+  color: rgb(83, 34, 34);
+}
+/* 确定按钮 */
+.sub_btn{
+  width: 80%;
+  height: 88rpx;
+  line-height: 88rpx;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  text-align: center;
+  color: #fff;
+  background:#FF383E;
+  border-radius: 46rpx;
+  font-size: 34rpx;
+}
+
+.pricker-view{
+  height:300rpx;
+  margin: 50rpx 60rpx;
+  text-align: center;
+}

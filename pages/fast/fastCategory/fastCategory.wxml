@@ -1,0 +1,22 @@
+<view class="container">
+
+  <scroll-view class='quickLeft' scroll-y="{{ true }}">
+    <block wx:for="{{someData}}" wx:key="{{index}}">
+      <view class='leftItem {{currentId == item.id? "active" : ""}}' data-id='{{item.id}}' bindtap='chioseCategory'>{{item.name}}</view>
+    </block>
+  </scroll-view>
+  <scroll-view class='quickRight' scroll-y="{{ true }}">
+    <block wx:for="{{ firstList }}" wx:key="{{ index }}">
+      <view class='rightItem'>
+        <view class='title'>{{item.name}}</view>
+        <view class='itemList'>
+          <block wx:for="{{ item.children }}" wx:key="{{ index }}" wx:for-item="itemName">
+            <view class='squrt' data-pid="{{item.id}}" data-pname="{{ item.name }}" data-cname="{{itemName.name }}" data-cid="{{ itemName.id }}" bindtap='getItemData'>{{ itemName.name }}</view>
+          </block>
+        </view>
+        <view class='line'></view>
+      </view>
+    </block>
+
+  </scroll-view>
+</view>

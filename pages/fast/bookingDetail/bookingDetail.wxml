@@ -1,0 +1,153 @@
+<!--pages/fast/bookDetail/bookingDetail.wxml-->
+<view class='container_mains'>
+
+  <view class="section section-gray">
+    <view class="item item-top">
+      <view class="left" style="color:#636364">预约编号：{{ order.order_sn }}</view>
+      <view class="right">
+        <view wx:if="{{order.order_status==1}}">
+          正在预约
+        </view>
+        <view wx:elif="{{order.order_status==2}}">
+          已关闭
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="section">
+    <view class="item item-line">
+      <view class="left">客户姓名：</view>
+      <view class="right">{{ user.realname }}</view>
+    </view>
+
+    <view class="item item-line">
+      <view class="left">客户手机：</view>
+      <view class="right">{{ user.username }}</view>
+    </view>
+
+    <view class="item item-line">
+      <view class="left">年龄：</view>
+      <view class="right">{{ user.age }}</view>
+    </view>
+
+    <view class="item item-line">
+      <view class="left">性别：</view>
+      <view class="right">
+        <view wx:if="{{user.sex==1}}">
+          男
+        </view>
+        <view wx:elif="{{user.sex==2}}">
+          女
+        </view>
+        <view wx:elif="{{user.sex==0}}">
+          保密
+        </view>
+      </view>
+    </view>
+
+    <view class="item item-line">
+      <view class="left">职业：</view>
+      <view class="right">{{ user.workplace }}</view>
+    </view>
+  </view>
+
+  <view class="line">
+  </view>
+
+  <view class="section">
+    <view class="item item-line">
+      <view class="left">预约时间：</view>
+      <view class="right">{{ order.order_time}}</view>
+    </view>
+    <view class="item item-line">
+      <view class="left">预约地址：</view>
+      <view class="right">{{ order.address }}</view>
+    </view>
+    <view class="item item-line">
+      <view class="left">预约医院：</view>
+      <view class="right">{{ order.hospital_name }}</view>
+    </view>
+    <view class="item item-line" style="min-height:78rpx;height:auto;">
+      <view class="left" style="min-width:180rpx;">预约项目：</view>
+      <view class="right">{{ order.project_name }}</view>
+    </view>
+     <view class="item item-line">
+      <view class="left">预约一级分类:</view>
+      <view class="right">{{ order.bc_array[0].name? order.bc_array[0].name : ""}}</view>
+    </view>
+     <view class="item item-line">
+      <view class="left">预约二级分类：</view>
+      <view class="right">{{ order.bc_array[1].name? order.bc_array[1].name : "" }}</view>
+    </view>
+     <view class="item item-line">
+      <view class="left">预约三级分类：</view>
+      <view class="right">{{ order.bc_array[2].name? order.bc_array[2].name : "" }}</view>
+    </view>
+
+    <view class="item item-line">
+      <view class="left">预约类型：</view>
+      <view class="right">{{ order.order_type_word }}</view>
+    </view>
+  </view>
+
+  <view class="line">
+  </view>
+
+  <view class="section">
+    <view class="item item-line">
+      <view class="left" style="font-weight:900;">服务商姓名：</view>
+      <view class="right">{{ order.server_name }}</view>
+    </view>
+    <view class="item item-line">
+      <view class="left" style="font-weight:900;">服务商手机：</view>
+      <view class="right">{{ order.server_phone }}</view>
+    </view>
+  </view>
+
+  <view class="line">
+  </view>
+
+  <!-- <view class="section">
+    <view class="item item-line" style="min-height:78rpx;height:auto;">
+      <view class="left" style="min-width:280rpx;">性格特点：</view>
+      <view class="right">
+        {{ user.user_nature }}
+      </view>
+    </view>
+    <view class="item item-line">
+      <view class="left">用户关注点：</view>
+      <view class="right">{{ user.user_concern_word }}</view>
+    </view>
+    <view class="item item-line">
+      <view class="left">曾咨询医院：</view>
+      <view class="right"> {{ user.know_hospitals }}</view>
+    </view>
+    <view class="item item-line">
+      <view class="left">曾做过医美项目：</view>
+      <view class="right"> {{ user.done_project }} </view>
+    </view>
+
+        <view class="item item-line">
+      <view class="left">经济自主权：</view>
+      <view class="right">{{ user.auto_economic }}</view>
+    </view>
+        <view class="item item-line">
+      <view class="left">经济实力：</view>
+      <view class="right">{{ user.power_economic }}</view>
+    </view>
+    <view class="item item-line">
+      <view class="left">铺垫项目：</view>
+      <view class="right">{{ order.follow_project }}</view>
+    </view>
+    <view class="item item-line">
+      <view class="left">铺垫程度：</view>
+      <view class="right">{{ order.follow_level ? order.follow_level+"%" : ""}}</view>
+    </view>
+    <view class="item item-line">  
+      <view class="left">预计消费：</view>
+      <view class="right">{{ order.expect_free_word }}</view>
+    </view>      
+  </view> -->
+</view>

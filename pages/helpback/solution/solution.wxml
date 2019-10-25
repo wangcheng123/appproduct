@@ -1,0 +1,44 @@
+<!-- 富文本文件 -->
+<import src="../../../wxParse/wxParse.wxml"/>
+
+<!-- solution.wxml -->
+<view class='container_solution'>
+  <view style='height:20rpx;'></view>
+  <view class='solution_box'>
+    <!-- 问题标题 -->
+    <view class='tit'>{{pData.question}}</view>
+
+    <!-- 解决方案 -->
+    <!-- <view class='answer'>{{datalist.method}}</view> -->
+
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+
+    <view class='issolution'>
+      <text>—————</text> 
+      <text class='text'>以上方案是否解决了您的问题</text> 
+      <text>—————</text>
+    </view>
+    <view class='isuse'>
+
+        <view bindtap='hit' data-type="1" class="{{type == 1 ?'check':'defule'}}" >
+          <image wx:if="{{type == 1}}" src="https://img.ameimeika.com/active/24b4f080afbc72f4ec78c7619be50195.png"></image>
+          <image wx:else src="https://img.ameimeika.com/active/b3d55d6b629d187130cd58bc452a137b.png"></image>
+          <text>有用</text>
+        </view>
+
+        <view bindtap='hit' data-type="2" class="{{type == 2 ?'check':'defule'}}" >
+          <image wx:if="{{type == 2}}" src="https://img.ameimeika.com/active/24b4f080afbc72f4ec78c7619be50195.png"></image>
+          <image wx:else src="https://img.ameimeika.com/active/b3d55d6b629d187130cd58bc452a137b.png"></image>
+          <text>没用</text>
+        </view>
+
+    </view>
+  </view>
+
+  <view class='prompt'>温馨提示：若没有解决您的问题，请点击下方【意见反馈】</view>
+  <!-- 意见反馈按钮 -->
+  
+  <navigator url='../feedback/feedback' class='feedback'>
+    意见反馈
+  </navigator>
+</view>

@@ -1,0 +1,78 @@
+<!-- withdraw.wxml -->
+<view class='container_withdraw'>
+  <!-- 温馨提示 -->
+  <view class='prompt'>
+    <text>温情提示：提现打款时间为工作日09:00-18:00，提现打款时限为两个工作日，节假日提现往后顺延。</text>
+  </view>
+  <!-- 提现金额 -->
+  <view class='withdraw_sum'>
+    <view class='sum_tit'>提现金额</view>
+    <view class='sum_mid'>
+      <text>￥</text>
+      <input placeholder-class='inputclass' wx:if="{{draw == 1}}" type='number' placeholder='请输入提现金额' bindinput='getsubnum' bindblur='setValue' value="{{drawMoney>0?drawMoney:''}}"></input>
+      <input placeholder-class='inputclass' wx:if="{{draw == 2}}" type='digit' placeholder='请输入提现金额' bindinput='getsubnum' bindblur='setValue' value="{{drawMoney>0?drawMoney:''}}"></input>
+    </view>
+    <view class='sum_bot'>当前可提现金额：
+      <text> {{drawValue}} </text>元</view>
+    <view class='sum_rule' wx:if="{{ draw ==1}}">提现需超过100且以100为单位</view>
+    <view class='sum_rule' wx:if="{{ draw ==2}}">提现需超过10元,精确到小数点后1位</view>
+  </view>
+  <view class='hr'></view>
+  <!-- 提现银行卡 -->
+  <navigator url='../bank/bank/bank' hover-class="none" class='bankcard'>
+
+    <text>提现至：</text>
+    <text class='bank_name'>{{card_txt}}</text>
+    <image src='https://img.ameimeika.com/server/27fbb94e49a585b9694166639ea8da03.png'></image>
+
+  </navigator>
+  <view class='hr'></view>
+  <!-- 短信验证 登录密码 -->
+  <view class='verift'>
+    <view class='verift_txt'>短信验证</view>
+
+    <view class='dx_verift dx'>
+      <input type='number' maxlength='6' placeholder-class="placecolor" bindinput='getverify' placeholder='请输入短信验证码'></input>
+      <button wx:if="{{vsecond == 0}}" bindtap='sendMsg'>获取验证码</button>
+      <button wx:else>
+        <text>{{vsecond}}</text>s重新发送</button>
+    </view>
+
+    <view class='verift_txt'>登录密码</view>
+    <view class='dx_verift'>
+      <input type='text' password='{{!isShowPassword}}' maxlength='18' bindinput='setPassword' placeholder-class="placecolor" placeholder='请输入登录密码'></input>
+      <view class='psw_eye' bindtap='showPassword'>
+        <image src='https://img.ameimeika.com/active/1264633edd0c8cfe801af242eebabeaf.png' wx:if='{{!isShowPassword}}' />
+        <image src='https://img.ameimeika.com/active/b3f576e308e7a75bc34ac8bdddd3072e.png' wx:else/>
+      </view>
+    </view>
+    <!-- 同意协议 -->
+    <view class='agree'>
+      <checkbox checked='{{isRead}}' bindtap='readOk'></checkbox>
+      <view class='agree_txt'>我已阅读并同意
+        <text class="user_read" bindtap='user_read'>《美美咖服务商提现协议》</text>
+      </view>
+    </view>
+  </view>
+  <wxs module="filters" src="./addmul.wxs"></wxs>
+  <!-- 确认按钮 -->
+  <button class="withdraw_btn" wx:if="{{!is_ok}}" bindtap='subToas'>确认</button>
+  <button class="withdraw_btn_ok" bindtap='drawsub' wx:else>确认</button>
+  <!-- 弹框 -->
+  <modal id="modal" show="{{showModal}}" height='48%' btn1="取消" btn2="确认" bindcancel="modalCancel" bindconfirm='modalConfirm'>
+    <view class="txt">实际提现额</view>
+    <view class="toast">￥{{drawMoney - filters.toFix( drawMoney*0.006) - filters.toFix(drawMoney*0.035)}}</view>
+    <view class="box">
+      <text>税前提现额</text>
+      <text>￥{{drawMoney}}</text>
+    </view>
+    <view class="box">
+      <text>服务费(0.6%)</text>
+      <text>￥{{filters.toFix( drawMoney*0.006)}}</text>
+    </view>
+    <view class="box">
+      <text>个人所得税(3.5%)</text>
+      <text>￥{{  filters.toFix(drawMoney*0.035)}}</text>
+    </view>
+  </modal>
+</view>

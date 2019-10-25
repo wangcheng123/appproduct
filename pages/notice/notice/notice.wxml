@@ -1,0 +1,24 @@
+<!-- notice.wxml -->
+<view class='container_notice'>
+  <scroll-view class='scrolllist' scroll-y bindscrolltolower="lower">
+
+    <!-- 公告item -->
+    <view class='itembox' wx:for="{{pData}}" wx:key="key" >
+      <view class='n_time'>{{item.created_at}}</view>
+
+      <view class='listitem'>
+        <view class='n_tit'>{{item.title}}</view>
+        <view class='n_det'>
+          <text class='text'>{{item.descript}}</text>
+        </view>
+ 
+        <view bindtap='todetails' data-id='{{item.id}}' class='to_detail'>
+          <text>查看详情</text>
+          <image src='https://img.ameimeika.com/server/27fbb94e49a585b9694166639ea8da03.png'></image>
+        </view>
+      </view>
+      
+    </view>
+
+  </scroll-view>
+</view>

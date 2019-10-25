@@ -1,0 +1,54 @@
+<!--pages/main/mine/myClient/myClient.wxml-->
+<view class='myClient'>
+  <view class='line'></view>
+ <view class='someTab' bindtap='toH5prize' wx:if="{{ ab_water }}"> <view><image class='jinshiImg' src='/images/jingshi-y.png'></image> 您有异常用户，核实后请尽快与客服联系。</view><image class='backIcon' src='https://img.ameimeika.com/active/0e026415e6fd345d810ffd15d13fb29b.png'></image> </view>
+  <!-- 几个核心数据 -->
+  <view class="core">
+    <view class="box">
+      <view class="top-item title">
+        <view>本月新增</view>
+        <view>累计推荐</view>
+      </view>
+      <view class="top-item number">
+        <view>{{mineData.month_rec}}人</view>
+        <view>{{mineData.all_rec}}人</view>
+      </view>
+    </view>
+  </view> 
+
+  <!-- 客户信息 -->
+  <view class='clientInfo' wx:if="{{noClient}}">
+    <view class='client'>  
+      <view class='clientTitle'>
+        <view>姓名</view>
+        <view>手机号</view>
+        <view>推荐时间</view>
+      </view>
+    </view>
+    
+    <view class='clientInfoDetails'>
+      <scroll-view scroll-y="true" bindscrolltolower="lower" bindscroll="scroll" scroll-top="230rpx">
+        <block wx:for="{{mineClients}}" wx:for-item="item" wx:key="">
+        <!-- {{ item.status }} --> 
+          <view class='clientInfoNumber {{item.status == 1?"disables":""}}' data-status='{{ item.status }}'  bindtap='subyichang'>
+            <view> <image wx:if="{{ item.status }}" class='wringIcon' src='/images/jingshi.png'></image> {{item.realname?item.realname:item.nickname}}</view>
+            <view>{{item.username}}</view>
+            <view>{{item.joint}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+
+  </view>
+
+  <!-- 没有客户 -->
+  <view class='noClient' wx:if="{{!noClient}}">
+    <view class='noClientImg'>
+      <image src='https://img.ameimeika.com/server/ba81756e78a91e45bf094028c45566d6.png'></image>
+    </view>
+    <view class='noClientText'>
+      <view>暂时没有绑定客户哦～</view>
+      <view>继续努力！</view>
+    </view>
+  </view>
+</view>

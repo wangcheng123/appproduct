@@ -1,0 +1,11 @@
+<!--pages/main/cancel/manuallyCancel.wxml-->
+
+<view class="container_code">
+  <input class="input_code" value="{{code}}" type="number" focus placeholder="请输入核销码" bindinput="bindCode"/>
+  <view class='result_btn' bindtap='getScancode'>
+    点击切换扫码核销
+  </view>
+  <view class='check_btn' bindtap="checkBtn">
+    确定核销
+  </view>
+</view>

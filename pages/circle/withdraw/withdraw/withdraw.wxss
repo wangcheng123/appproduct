@@ -1,0 +1,251 @@
+/* withdraw.wxss */
+
+.container_withdraw {
+  min-height: 100%;
+}
+
+/* 温馨提示 */
+
+.prompt {
+  padding: 20rpx 30rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: #666;
+  background: #f5f5f5;
+}
+
+.hr {
+  height: 20rpx;
+  background: #f5f5f5;
+}
+
+/* 提现金额 */
+
+.withdraw_sum {
+  padding: 30rpx;
+  min-height: 50rpx;
+  background: #fff;
+}
+
+.withdraw_sum .sum_tit {
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular;
+  color: #333;
+}
+
+.withdraw_sum .sum_mid {
+  display: flex;
+  padding: 40rpx 0 10rpx;
+  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+  font-size: 48rpx;
+}
+
+.withdraw_sum .sum_mid .inputclass {
+  font-size: 34rpx;
+  color: rgba(204, 204, 204, 1);
+}
+
+.withdraw_sum .sum_mid text {
+  font-weight: 600;
+  font-size: 60rpx;
+}
+
+.withdraw_sum .sum_mid input {
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-left: 20rpx;
+}
+
+.withdraw_sum .sum_bot {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: #999;
+  margin-top: 30rpx;
+}
+
+.withdraw_sum .sum_bot text {
+  color: #ff383e;
+}
+
+.withdraw_sum .sum_rule {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: #999;
+}
+
+/* 提现银行卡 */
+
+.bankcard {
+  height: 108rpx;
+  line-height: 108rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(136, 136, 136, 1);
+}
+
+.bankcard .bank_name {
+  color: #333;
+}
+
+.bankcard image {
+  float: right;
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 29rpx;
+}
+
+/* 短信验证 登录密码验证 */
+
+.verift {
+  padding: 30rpx 30rpx 0;
+  background: #fff;
+}
+
+.verift .verift_txt {
+  font-size: 34rpx;
+  font-family: PingFangSC-Regular;
+  color: #333;
+}
+
+.verift .dx_verift {
+  height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid rgba(238, 238, 238, 1);
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.verift .dx_verift input {
+  width: 80%;
+}
+
+.verift .dx_verift .psw_eye {
+  width: 42rpx;
+  height: 42rpx;
+  margin-top: 24rpx;
+  margin-right: 20rpx;
+  float: right;
+  font-size: 0;
+}
+
+.verift .dx_verift .psw_eye image {
+  width: 100%;
+  height: 100%;
+}
+
+.verift .dx_verift.dx input {
+  width: 65%;
+}
+
+.verift .dx_verift button {
+  height: 64rpx;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  color: #ff383e;
+  outline-style: none;
+  border-radius: 32rpx;
+  border: 2rpx solid rgba(255, 56, 62, 1);
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 8rpx;
+  z-index: 10;
+}
+
+.verift .dx_verift input {
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.verift .dx_verift .placecolor {
+  font-size: 32rpx;
+  color: rgba(204, 204, 204, 1);
+}
+
+.verift .agree {
+  padding-bottom: 30rpx;
+}
+
+.verift .agree .agree_txt {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  color: rgba(136, 136, 136, 1);
+  display: inline-block;
+  line-height: 60rpx;
+}
+
+.verift .agree .agree_txt navigator {
+  display: inline-block;
+  color: #ff383e;
+  text-decoration: underline;
+}
+
+checkbox .wx-checkbox-input {
+  border: 2rpx solid #ff383e;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #ff383e;
+}
+
+/* 确认按钮 */
+
+.withdraw_btn {
+  width: 70%;
+  margin: 50rpx 15% 0;
+  height: 88rpx;
+  outline-style: none;
+  background: rgba(255, 56, 62, 1);
+  border-radius: 46rpx;
+  opacity: 0.5008;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.withdraw_btn_ok {
+  width: 70%;
+  margin: 50rpx 15% 0;
+  height: 88rpx;
+  outline-style: none;
+  background: RGBA(255, 90, 95, 1);
+  border-radius: 46rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+button::after {
+  border: none;
+}
+
+.user_read {
+  color: RGBA(255, 56, 62, 1);
+}
+
+#modal .txt {
+  color: #333;
+  font-size: 32rpx;
+  text-align: center;
+  margin: 60rpx 0 20rpx 0;
+}
+
+.toast {
+  color: #ff383e;
+  font-size: 64rpx;
+  text-align: center;
+  margin-bottom: 60rpx;
+}
+.box{
+  display: flex;
+  padding: 0 40rpx;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+}

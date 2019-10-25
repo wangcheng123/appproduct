@@ -1,0 +1,122 @@
+/**app.wxss**/
+
+/* 登录页面公用样式 */
+
+view {
+  padding: 0;
+  margin: 0;
+}
+
+.container_login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/*头部*/
+
+.logo_img {
+  width: 176rpx;
+  height: 176rpx;
+  margin: 80rpx auto 0;
+}
+
+.logo_txt {
+  text-align: center;
+  color: rgba(51, 51, 51, 1);
+  font-size: 38rpx;
+  padding-top: 30rpx;
+}
+
+.logo_img image {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.hr {
+  height: 20rpx;
+  background: rgba(248, 248, 248, 1);
+}
+
+button::after {
+  border: none;
+}
+
+.placecolor {
+  color: rgba(204, 204, 204, 1);
+}
+
+/* 单选框自定义样式 */
+
+/* 未选中的 */
+
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  width: 38rpx;
+  height: 38rpx;
+}
+
+/* 选中后的 对勾样式 */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  color: #fff; /* 对勾颜色 白色 */
+}
+
+/*  重写 radio 样式  */
+
+/* 未选中的 背景样式 */
+
+radio .wx-radio-input {
+  border-radius: 50%; /* 圆角 */
+  width: 36rpx;
+  height: 36rpx;
+  border: 1rpx solid rgba(255, 140, 191, 1);
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked {
+  background: rgba(255, 140, 191, 1);
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  color: #fff; /* 对勾颜色 白色 */
+}
+
+.toast {
+  width: 450rpx;
+  height: 84rpx !important;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -225rpx;
+  margin-top: -42rpx;
+}
+
+.mtext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

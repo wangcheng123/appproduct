@@ -1,0 +1,78 @@
+<!-- fast.wxml -->
+<view class="container_fasts">
+  <!-- 快速预约 预约单 tab -->
+
+  <view class='changetab'>
+    <view class="default" hover-class='none' bindtap='toOrder'>快速预约</view>
+    <view class="check" hover-class='none'>预约单</view>
+  </view>
+
+  <!-- 预约单 板块 -->
+    <view class='container_order'>
+      <!-- 头部区域 --> 
+      <view class="order_top">
+        <view class='search_input2'>
+          <image class='search_icon2' src='https://img.ameimeika.com/active/ba3955e3460bee281fcdcca66e719913.png'></image>
+          <input value='{{keyword}}' bindfocus='showSearchTwo' bindconfirm="search" bindinput='toInput' placeholder='客户姓名/手机号/医院' ></input>
+
+          <view wx:if='{{isInput}}'>
+            <image src='https://img.ameimeika.com/server/740af2208ad6f9fbb6202ed4dafc075a.png' class='clear_icon' catchtap="clearInput"></image>
+          </view>
+          <text bindtap='search'>搜索</text>          
+        </view>
+      </view>
+
+    </view>
+    
+    <!-- 预约单 -->
+    <scroll-view  style="height:82%;" scroll-y class='order_list' bindscrolltolower="lower">
+
+      <view class='order' wx:for="{{orders}}" wx:key wx:for-item='order' wx:for-index='idx'>
+        <!-- 列表item 开始 -->
+        <view class='order_item' data-id="{{order.id}}" catchtap='toDetail'>
+          <view class='side_time'>
+            <view>{{order.order_time}}</view>
+          </view>
+          <view class='section'>
+            <view class='text_msg'>
+              <text>预约编号：{{order.order_sn}}</text>
+
+              <text wx:if="{{order.order_status == 1}}">正在预约{{item.type>3?'（全款项目）':''}}</text>
+              <text wx:else>已关闭</text>
+
+            </view> 
+
+            <view class='section_list'>
+              <view class='sectionLeft'>
+                <image src="{{imgUrl}}{{order.project_image}}"></image>
+              </view>
+              <view class='sectionRight'>
+                <view class='titile'>{{order.project_name}}</view>
+                <view class='hospital'>{{order.hospital_name}}</view>
+              </view>
+            </view>
+            <view class='text_name'>客户姓名：{{order.user.realname?order.user.realname:order.user.nickname}}</view>
+
+            <view class='text_phone'>
+              <text>客户手机：{{order.user.username}}</text>
+
+              <text class='btn' wx:if="{{order.order_status==1 && order.type < 3 }}" data-order='{{order.order_sn}}' catchtap="cancel_order"  data-index="{{idx}}" >取消预约</text>
+
+            </view>
+
+          </view>
+        </view>  
+        <!-- 列表item 结束 -->
+      </view>
+      
+    </scroll-view>
+
+    <!-- 预约单为空占位符 -->
+    <view wx:if="{{isshow}}" class='orderholder'>
+      <image src='https://img.ameimeika.com/server/13c10ae3529426f7196cc2af877d6dc7.png'></image>
+      <view>暂时还没有预约单哦～</view>
+    </view>
+  
+</view>
+
+  

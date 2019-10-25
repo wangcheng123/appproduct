@@ -1,0 +1,48 @@
+<!-- material_search.wxml -->
+<view class='container_msearch'>
+  <!-- 搜索 -->
+  <view class='m_search'>
+    <image src='https://img.ameimeika.com/active/ba3955e3460bee281fcdcca66e719913.png'></image>
+    <input value='{{keyword}}' bindconfirm='searchkeyword' class='s_input' placeholder='请输入素材名称' placeholder-class='s_place'></input>
+    <image src='https://img.ameimeika.com/server/82e8fe6e91918806b75255d116c3810c.png' class='clearImg' bindtap='clear'></image>
+    <view bindtap='goback' class='cancel'>取消</view>
+  </view>
+
+  <!-- 素材列表 -->
+  <view class='section_list'>
+    <view class='col'>
+      <!-- 素材列表item -->
+      <view bindtap='todetails' data-class='{{item.class}}' data-id='{{item.id}}' wx:if="{{index%2 == 0}}" wx:key="{{index}}" wx:for="{{listarr}}" class='sec_item'>
+        <view class='imgbox'>
+          <image mode='aspectFit' wx:if="{{item.mini_url}}" src='{{imgurl}}{{item.mini_url}}' mode="widthFix"></image>
+          <view wx:if="{{item.class == 2}}" class='mask'>
+            <image src='https://img.ameimeika.com/active/1efc6d65c2d9cb1b0ffecd66a8a415f8.png'></image>
+          </view>
+        </view>
+        <view class='title'>{{item.title}}</view>
+        
+      </view>
+      <!-- 素材列表item end-->
+    </view>
+    <view class='col_r'>
+
+      <view bindtap='todetails' data-class='{{item.class}}' data-id='{{item.id}}' wx:if="{{index%2 != 0}}" wx:key="{{index}}" wx:for="{{listarr}}"  class='sec_item'>
+        <view class="{{index==1?'minimgbox':'imgbox'}}">
+          <image mode="{{index==1?'':'aspectFit'}}" wx:if="{{item.mini_url}}" src='{{imgurl}}{{item.mini_url}}' mode="widthFix"></image>
+          <view wx:if="{{item.class == 2}}" class='mask'>
+            <image src='https://img.ameimeika.com/active/1efc6d65c2d9cb1b0ffecd66a8a415f8.png'></image>
+          </view>
+        </view>
+        <view class='title'>{{item.title}}</view>
+        
+      </view>
+
+    </view>
+  </view>
+
+  <!-- 素材列表占位符 -->
+  <view wx:if="{{isshow}}" class='orderholder'>
+    <image src='https://img.ameimeika.com/active/d6eb8722443cb0715bd805b8798587d7.png'></image>
+    <view>暂未搜到相关素材～换个词儿试试吧</view>
+  </view>
+</view>

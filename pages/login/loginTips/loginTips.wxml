@@ -1,0 +1,4 @@
+<!--pages/login/loginTips/loginTips.wxml-->
+ <modal id="modal" show="{{showModal}}" height='28%' btn1="{{redirect_type==1 || redirect_type==2?'暂不申请':''}}" btn2="{{redirect_type==1 || redirect_type==2?'申请成为商户':'确定'}}" btntype="{{redirect_type==1 || redirect_type==2 ? 1 : ''}}" suretype="{{redirect_type==1 || redirect_type==2 ? '' : 1}}">
+    <view class="toast">{{redirect_type==1 || redirect_type==2?'请先申请成为商户':'请先去商户PC后台补充法人/经营者和门店资料'}}</view>
+  </modal>

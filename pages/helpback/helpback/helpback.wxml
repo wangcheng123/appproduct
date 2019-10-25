@@ -1,0 +1,15 @@
+<!-- helpback.wxml -->
+<view class='container_help'>
+  <view class='common'>常见问题</view>
+  
+  <!-- 问题列表 -->
+  <view class='faqlist'>
+    <view bindtap='clickgetval' class='listitem' data-id='{{item.id}}' wx:key="{{index}}" wx:for="{{questionarr}}">{{item.question}}</view>
+  </view>
+
+
+  <!-- 在线客服 意见反馈 -->
+  <view class='faq_btn'> 
+    <navigator url='../feedback/feedback' class='tofeedback' hover-class='none'>意见反馈</navigator>
+  </view>
+</view>

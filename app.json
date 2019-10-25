@@ -1,0 +1,96 @@
+{
+  "pages": [
+    "pages/main/index/index",
+    "pages/login/loginTips/loginTips",
+    "pages/main/pirce/price",
+    "pages/main/pricedetail/pricedetail",
+    "pages/circle/withdraw/withdraw/withdraw",
+    "pages/main/mine/mine/main",
+    "pages/main/goods/goods",
+    "pages/notice/notice/notice",
+    "pages/notice/noticedet/noticedet",
+    "pages/fast/fast/fast",
+    "pages/fast/fastclient/fastclient",
+    "pages/fast/fastother/fastother",
+    "pages/circle/circle/circle",
+    "pages/circle/projectFlow/projectFlow",
+    "pages/circle/distributionFlow/distributionFlow",
+    "pages/circle/time/time",
+    "pages/circle/withdraw/bank/bank/bank",
+    "pages/circle/withdraw/bank/bankadd/bankadd",
+    "pages/circle/group/group",
+    "pages/material/material/material",
+    "pages/material/material_del/material_del",
+    "pages/material/material_list/material_list",
+    "pages/material/material_search/material_search",
+    "pages/material/province/province",
+    "pages/helpback/helpback/helpback",
+    "pages/helpback/solution/solution",
+    "pages/helpback/feedback/feedback",
+    "pages/main/mine/myClient/myClient",
+    "pages/main/mine/rewardOrder/rewardOrder",
+    "pages/h5/index",
+    "pages/fast/bookingForm/bookingForm",
+    "pages/login/index/index",
+    "pages/login/accountLogin/accountLogin",
+    "pages/login/wxAuthorize/wxAuthorize",
+    "pages/login/bindingPhone/bindingPhone",
+    "pages/fast/bookingDetail/bookingDetail",
+    "pages/fast/fastCategory/fastCategory",
+    "pages/main/cancel/manuallyCancel",
+    "pages/main/cancel/cancelResults/cancelResults",
+    "pages/main/order/order",
+    "pages/main/order/orderDetails/orderDetails",
+    "pages/main/results/results",
+    "pages/main/results/information/information"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF383E",
+    "backgroundColor": "#FFFDFD",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/main/index/index",
+        "text": "工作台",
+        "iconPath": "images/homeGray.png",
+        "selectedIconPath": "images/homeRed.png"
+      },
+      {
+        "pagePath": "pages/main/goods/goods",
+        "text": "分享",
+        "iconPath": "images/goodsGray.png",
+        "selectedIconPath": "images/goodsRed.png"
+      },
+      {
+        "pagePath": "pages/main/mine/mine/main",
+        "text": "我的",
+        "iconPath": "images/mineGray.png",
+        "selectedIconPath": "images/mineRed.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx068421b4fbf58332"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "meiqia": {
+      "version": "1.1.0",
+      "provider": "wx2d2cd5fd79396601"
+    }
+  }
+}

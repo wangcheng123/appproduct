@@ -1,0 +1,74 @@
+<!--pages/main/results/results.wxml-->
+<view class="container_main">
+  <view class='aTopTitle'>
+    <block wx:for="{{['PLUS会员业绩','服务业绩','项目业绩','商品业绩']}}" wx:key="id">
+      <view data-index='{{index}}' class="titleItem {{currentTabsIndex == index ? 'active' : ''}}" bindtap='onTabs'>{{item}}</view>
+    </block>
+  </view>
+  <!-- 业绩明细 -->
+  <view class="information" wx:if="{{currentTabsIndex == index}}">
+    <view class="title">
+      筛选
+      <icon bindtap="chooseTime"></icon>
+    </view>
+    <view class="input_box">
+      <view class="input">
+        <view class="time">{{tstart.year}}-{{tstart.month}}-{{tstart.day}}</view>
+        <view class="stitle">业绩总额:￥{{details.sum}}</view>
+      </view>
+      <text>至</text>
+      <view class="input">
+        <view class="time">{{tend.year}}-{{tend.month}}-{{tend.day}}</view>
+        <view class="stitle">订单数:{{details.count}}</view>
+      </view>
+    </view>
+    <scroll-view class="swiper-box" scroll-y style="width: 100%" bindscrolltolower='lower' wx:if="{{details.achieve.length > 0}}">
+      <view class="item" wx:for="{{details.achieve}}" :key="index">
+        <view class="time">{{item.create_at}}</view>
+        <view class="fonts">
+          {{item.username}}（{{item.realname}}）
+          <text>{{item.money}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 选择时间弹框 -->
+  <view class="mask" wx:if="{{isTime}}">
+    <view class='container_time'>
+      <!-- 选择时间 -->
+      <view class='select_time'>
+        <view class="picker item_select {{type==1?'color':''}}" data-type='1' bindtap='check_type'>
+          {{tstart.year}}年{{tstart.month}}月{{tstart.day}}日
+        </view>
+        <text>至</text>
+        <view class="picker item_select {{type==2?'color':''}}" data-type='2' bindtap='check_type'>
+          {{tend.year}}年{{tend.month}}月{{tend.day}}日
+        </view>
+      </view>
+
+      <picker-view indicator-style="height: 112rpx;" class='pricker-view' value="{{value}}" bindchange="dchange">
+        <picker-view-column>
+          <view style="line-height: 61rpx" wx:for="{{years}}" wx:key>{{item}}年</view>
+        </picker-view-column>
+
+        <picker-view-column>
+          <view style="line-height: 61rpx" wx:for="{{months}}" wx:key>{{item}}月</view>
+        </picker-view-column>
+
+        <picker-view-column>
+          <view style="line-height: 61rpx" wx:for="{{days}}" wx:key>{{item}}日</view>
+        </picker-view-column>
+      </picker-view>
+
+      <!-- 确定按钮 -->
+      <view class="btn_box">
+        <view bindtap='timesub' class='sub_btn'>
+          确定
+        </view>
+        <view bindtap='timesub' class='sub_btn off_btn'>
+          取消
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

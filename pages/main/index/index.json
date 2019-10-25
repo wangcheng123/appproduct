@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTitleText": "美美咖商户助手",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "modal": "../../../components/modal/modal"
+  }
+}
